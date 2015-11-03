@@ -2,6 +2,7 @@ package com.chsj.smallhabit.fragment;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.view.ViewGroup;
 
 import android.widget.LinearLayout;
 import android.widget.Toast;
+import com.chsj.smallhabit.DiscoverSquareActivity;
 import com.chsj.smallhabit.R;
 import com.chsj.smallhabit.utils.Configs;
 import com.chsj.smallhabit.utils.EventUtils;
@@ -41,6 +43,10 @@ public class DiscoverFragment extends Fragment implements View.OnClickListener {
         addFriend_layout = (LinearLayout) bg_view.findViewById(R.id.fragment_discover_add_friend);
         msg_layout = (LinearLayout) bg_view.findViewById(R.id.fragment_discover_msg);
         EventUtils.setEvent(this, msg_layout, square_layout, addFriend_layout);
+
+        //从共享参数获取信息，是否已经登陆了
+        isLoading = getContext().getSharedPreferences(Configs.SHARDPERFACE_NAME,
+                Context.MODE_PRIVATE).getBoolean(Configs.ISLOADING,false);
         return bg_view;
     }
 
@@ -50,7 +56,8 @@ public class DiscoverFragment extends Fragment implements View.OnClickListener {
         switch (v.getId()) {
             //广场
             case R.id.fragment_discover_square:
-                Toast.makeText(getContext(), "点击了广场", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getContext(), DiscoverSquareActivity.class);
+                startActivity(intent);
                 break;
             //加好友
             case R.id.fragment_discover_add_friend:
@@ -58,8 +65,7 @@ public class DiscoverFragment extends Fragment implements View.OnClickListener {
                 break;
             //消息
             case R.id.fragment_discover_msg:
-                if(getContext().getSharedPreferences(Configs.SHARDPERFACE_NAME,
-                        Context.MODE_PRIVATE).getBoolean(Configs.ISLOADING,false)){
+                if(isLoading){
                     Toast.makeText(getContext(), "已经登陆", Toast.LENGTH_SHORT).show();
                 }else{
                     Toast.makeText(getContext(), "跳转登陆页面", Toast.LENGTH_SHORT).show();

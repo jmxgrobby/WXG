@@ -14,11 +14,16 @@
             >
     </FrameLayout>
 
-
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#a3b3aa"
+            ></RelativeLayout>
     <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="5dp"
             >
         <ImageView
                 android:id="@+id/activity_main_tab_qd"
