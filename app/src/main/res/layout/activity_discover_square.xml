@@ -1,0 +1,50 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             tools:context="com.chsj.smallhabit.DiscoverSquareActivity"
+        >
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                >
+
+            <ImageView
+                    android:id="@+id/activity_discover_square_back"
+                    android:src="@mipmap/back"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    />
+            <android.support.design.widget.TabLayout
+                    android:id="@+id/activity_discover_square_tablayout"
+                    android:layout_width="0dp"
+                    android:layout_weight="6"
+                    android:layout_height="match_parent"
+                    tabIndicatorColor= "#03a4db"
+                    app:tabIndicatorHeight="3dp"
+                    app:tabSelectedTextColor="#03a4db"
+                    />
+        </LinearLayout>
+        <android.support.v4.view.ViewPager
+                android:id="@+id/activity_discover_square_viewpager"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                />
+
+    </LinearLayout>
+
+
+
+</FrameLayout>
