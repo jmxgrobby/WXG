@@ -1,0 +1,26 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="@mipmap/guide_v2_bg"
+             tools:context="com.jmxgrobby.login.FirstViewPager"
+        >
+
+    <android.support.v4.view.ViewPager
+            android:id="@+id/activity_first_viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+    <ImageView
+            android:id="@+id/activity_first_viewpager_skip"
+            android:onClick="btnMain"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="right"
+            android:src="@mipmap/skip_ico"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            />
+
+</FrameLayout>
