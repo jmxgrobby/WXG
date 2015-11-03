@@ -10,7 +10,7 @@ package com.chsj.smallhabit.task;
 import android.os.AsyncTask;
 import android.util.Log;
 import com.chsj.smallhabit.bean.TrendsEntity;
-import com.chsj.smallhabit.interfaces.AfterGetTrends;
+import com.chsj.smallhabit.interfaceses.AfterGetTrends;
 import com.chsj.smallhabit.parser.ParserTrends;
 import com.chsj.smallhabit.utils.StreamUtil;
 import org.apache.http.HttpEntity;

@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import com.chsj.smallhabit.R;
 import com.chsj.smallhabit.bean.TrendsEntity;
-import com.chsj.smallhabit.interfaces.AfterGetTrends;
+import com.chsj.smallhabit.interfaceses.AfterGetTrends;
 import com.chsj.smallhabit.task.TrendsTask;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
