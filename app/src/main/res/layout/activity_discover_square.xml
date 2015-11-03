@@ -31,7 +31,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="6"
                     android:layout_height="match_parent"
-                    tabIndicatorColor= "#03a4db"
+                    app:tabIndicatorColor= "#03a4db"
                     app:tabIndicatorHeight="3dp"
                     app:tabSelectedTextColor="#03a4db"
                     />

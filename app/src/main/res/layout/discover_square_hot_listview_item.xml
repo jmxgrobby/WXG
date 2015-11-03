@@ -36,70 +36,33 @@
             />
 
     <LinearLayout
+            android:layout_below="@id/discover_square_hot_listview_item_time"
             android:id="@+id/discover_square_hot_listview_item_xg_layout"
-            android:layout_below="@id/discover_square_hot_listview_item_phone"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:orientation="horizontal"
-            >
-
-        <TextView
-                android:id="@+id/discover_square_hot_listview_item_xg"
-                android:textColor="@color/text_bg"
-                android:textSize="15sp"
-                android:text="坚持每天画画"
-                android:gravity="center_vertical|right"
-                android:layout_weight="5"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                />
-
-        <TextView
-                android:gravity="center"
-                android:text="连续"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                />
-
-        <TextView
-                android:id="@+id/discover_square_hot_listview_item_sumtime"
-                android:textSize="15sp"
-                android:textColor="@color/text_bg"
-                android:gravity="center_vertical"
-                android:text="134天"
-                android:layout_weight="4"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                />
-    </LinearLayout>
-
-    <ImageView
-            android:layout_below="@id/discover_square_hot_listview_item_xg_layout"
-            android:id="@+id/discover_square_hot_listview_item_big_image"
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@mipmap/ic_launcher"
-            />
+            ></LinearLayout>
 
     <TextView
             android:id="@+id/discover_square_hot_listview_item_comments"
-            android:layout_below="@id/discover_square_hot_listview_item_big_image"
+            android:layout_below="@id/discover_square_hot_listview_item_xg_layout"
             android:text="5"
             android:layout_alignParentRight="true"
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_height="30dp"
             android:layout_marginRight="5dp"
+            android:gravity="center"
             />
 
     <TextView
             android:layout_toLeftOf="@id/discover_square_hot_listview_item_comments"
             android:id="@+id/discover_square_hot_listview_item_loves"
-            android:layout_below="@id/discover_square_hot_listview_item_big_image"
+            android:layout_below="@id/discover_square_hot_listview_item_xg_layout"
             android:text="16"
+            android:gravity="center"
             android:layout_alignParentRight="true"
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_height="30dp"
             android:layout_marginRight="60dp"
             />
 
