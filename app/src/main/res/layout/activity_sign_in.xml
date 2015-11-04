@@ -153,7 +153,7 @@
        android:paddingRight="20dp"
        android:drawableTop="@mipmap/login_qq_login_icon"
        android:layout_width="0dp"
-       android:layout_height="80dp" />
+       android:layout_height="wrap_content" />
        <RadioButton
            android:id="@+id/main_sign_in_wechat"
            android:layout_gravity="center"
@@ -166,7 +166,7 @@
            android:paddingRight="20dp"
            android:drawableTop="@mipmap/login_wechat_login_icon"
            android:layout_width="0dp"
-           android:layout_height="80dp" />
+           android:layout_height="wrap_content" />
        <RadioButton
            android:id="@+id/main_sign_in_weibo"
            android:layout_gravity="center"
@@ -179,6 +179,6 @@
            android:paddingRight="20dp"
            android:drawableTop="@mipmap/login_sina_login_icon"
            android:layout_width="0dp"
-           android:layout_height="80dp" />
+           android:layout_height="wrap_content" />
    </LinearLayout>
 </LinearLayout>

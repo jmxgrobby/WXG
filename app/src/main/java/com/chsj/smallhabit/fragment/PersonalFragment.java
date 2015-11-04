@@ -31,7 +31,7 @@ public class PersonalFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.fragment_personal, container, false);
+        View view=inflater.inflate(R.layout.activity_sign_in, container, false);
         return view;
     }
 
