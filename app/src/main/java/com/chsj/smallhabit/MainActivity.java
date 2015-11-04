@@ -1,5 +1,6 @@
 package com.chsj.smallhabit;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -13,6 +14,7 @@ import com.chsj.smallhabit.fragment.DiscoverFragment;
 import com.chsj.smallhabit.fragment.MoreFragment;
 import com.chsj.smallhabit.fragment.ParticipationFragment;
 import com.chsj.smallhabit.fragment.PersonalFragment;
+import com.chsj.smallhabit.utils.Configs;
 import com.chsj.smallhabit.utils.EventUtils;
 
 /**
@@ -67,8 +69,14 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                transaction.add(R.id.activity_main_fragment,fragments[i],"fragment"+i);
                 transaction.hide(fragments[i]);
             }
-            //默认显示第一tab页
-            transaction.show(fragments[0]);
+            //默认显示第一tab页，
+            SharedPreferences sp=getSharedPreferences(Configs.SHARDPERFACE_NAME,MODE_PRIVATE);
+            boolean flags=sp.getBoolean(Configs.WECHATBACK,true);
+            if (flags==true){
+                transaction.show(fragments[2]);
+            }else{
+                transaction.show(fragments[0]);
+            }
             transaction.commit();
             Log.d("debug111", "saveInstanceState空");
         }else{

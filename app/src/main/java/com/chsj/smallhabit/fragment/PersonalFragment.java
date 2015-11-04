@@ -10,10 +10,11 @@ import com.chsj.smallhabit.R;
 
 
 /**
- * Created
- * Author: jmxgrobby
- * Email: jmxgrobby@163.com
- * Date:  2015/11/3.
+ * ProjectName: com.chsj.smallhabit.utils
+ * Created by : ChSJ.Team
+ * Email:  15001045515@163.com
+ * user: 杨空明
+ * on 2015-11-03.
  */
 
 /**
@@ -30,8 +31,8 @@ public class PersonalFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_personal, container, false);
+        View view=inflater.inflate(R.layout.fragment_personal, container, false);
+        return view;
     }
 
 
