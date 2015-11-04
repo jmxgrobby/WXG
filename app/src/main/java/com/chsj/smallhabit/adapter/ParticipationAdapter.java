@@ -66,6 +66,12 @@ public class ParticipationAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
 
+        if (pb.getDays().get(6) == 1){
+            convertView.setBackgroundResource(R.drawable.abc_list_longpressed);
+        }else {
+            // TODO: 2015/11/4 修改这里
+//            convertView.setBackgroundResource(R.drawable.);
+        }
 
 
         holder.textView.setText(pb.getName());
