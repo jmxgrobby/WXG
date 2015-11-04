@@ -17,4 +17,6 @@ public class Configs {
     public static final String ISFIRST = "isFirst?";
     //判断是否已经登录的信息
     public static final String ISLOADING = "isLoading?";
+    //判断点击官方微信是否按返回键
+    public static final String WECHATBACK="isweChatBack";
 }
