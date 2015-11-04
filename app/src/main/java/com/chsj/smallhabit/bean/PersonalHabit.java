@@ -12,6 +12,7 @@ import java.util.Objects;
 /**
  * Created by dongmeng on 2015/11/3.
  */
+
 public class PersonalHabit {
 
     /**
