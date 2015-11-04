@@ -7,10 +7,12 @@ package com.chsj.smallhabit.bean;
  * Date:  2015/11/3.
  */
 
+import java.io.Serializable;
+
 /**
  * 评论数据类
  */
-public class CommentListEntity {
+public class CommentListEntity implements Serializable{
 
 
     /**

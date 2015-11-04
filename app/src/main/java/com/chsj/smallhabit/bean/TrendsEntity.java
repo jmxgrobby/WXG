@@ -7,12 +7,13 @@ package com.chsj.smallhabit.bean;
  * Date:  2015/11/3.
  */
 
-import java.util.List;
+import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  * 发现碎片点击广场进入的动态界面显示的数据实体类
  */
-public class TrendsEntity {
+public class TrendsEntity implements Serializable{
 
 
     /**
@@ -67,7 +68,7 @@ public class TrendsEntity {
     //评论次数
     private int CommentCount;
     //中间大图
-    private List<TrendsPhotosEntity> trendsPhotosEntities;
+    private ArrayList<TrendsPhotosEntity> trendsPhotosEntities;
 
     public String getDetailId() {
         return DetailId;
@@ -181,34 +182,34 @@ public class TrendsEntity {
         CommentCount = commentCount;
     }
 
-    public List<TrendsPhotosEntity> getTrendsPhotosEntities() {
+    public ArrayList<TrendsPhotosEntity> getTrendsPhotosEntities() {
         return trendsPhotosEntities;
     }
 
-    public void setTrendsPhotosEntities(List<TrendsPhotosEntity> trendsPhotosEntities) {
+    public void setTrendsPhotosEntities(ArrayList<TrendsPhotosEntity> trendsPhotosEntities) {
         this.trendsPhotosEntities = trendsPhotosEntities;
     }
 
-    public List<CommentListEntity> getCommentListEntities() {
+    public ArrayList<CommentListEntity> getCommentListEntities() {
         return commentListEntities;
     }
 
-    public void setCommentListEntities(List<CommentListEntity> commentListEntities) {
+    public void setCommentListEntities(ArrayList<CommentListEntity> commentListEntities) {
         this.commentListEntities = commentListEntities;
     }
 
-    public List<PraisePhotosEntity> getPraisePhotosEntities() {
+    public ArrayList<PraisePhotosEntity> getPraisePhotosEntities() {
         return praisePhotosEntities;
     }
 
-    public void setPraisePhotosEntities(List<PraisePhotosEntity> praisePhotosEntities) {
+    public void setPraisePhotosEntities(ArrayList<PraisePhotosEntity> praisePhotosEntities) {
         this.praisePhotosEntities = praisePhotosEntities;
     }
 
     //评论列表
-    private List<CommentListEntity> commentListEntities;
+    private ArrayList<CommentListEntity> commentListEntities;
 
     //点赞（？评论）人图标
-    private List<PraisePhotosEntity>  praisePhotosEntities;
+    private ArrayList<PraisePhotosEntity>  praisePhotosEntities;
 
 }

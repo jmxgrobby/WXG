@@ -18,6 +18,7 @@ import com.chsj.smallhabit.R;
 import com.chsj.smallhabit.bean.*;
 import com.chsj.smallhabit.utils.Configs;
 import com.chsj.smallhabit.utils.DimensionUtil;
+import com.chsj.smallhabit.utils.GetRightUrlUtils;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -135,7 +136,7 @@ public class TrendsAdapter extends BaseAdapter {
         List<TrendsPhotosEntity> photosEntities = trendsEntity.getTrendsPhotosEntities();
         if (photosEntities != null) {
             String original = photosEntities.get(0).getOriginal();
-            big_image_url = getUrl(original);
+            big_image_url = GetRightUrlUtils.getUrl(original);
             Picasso.with(context).load(big_image_url).into(big_image);
         }
         //习惯其他数据布局
@@ -153,7 +154,7 @@ public class TrendsAdapter extends BaseAdapter {
 
         String genPhoto = trendsEntity.getGenPhoto();
         String url;
-        url = getUrl(genPhoto);
+        url = GetRightUrlUtils.getUrl(genPhoto);
         Picasso.with(context).load(url).into(viewHolder.GenPhoto);
 
         //点赞的人的图标
@@ -190,7 +191,7 @@ public class TrendsAdapter extends BaseAdapter {
                             DimensionUtil.dpTopx(context, 5),
                             DimensionUtil.dpTopx(context, 2));
                     imageView.setLayoutParams(params);
-                    Picasso.with(context).load(getUrl(photoUrl)).into(imageView);
+                    Picasso.with(context).load(GetRightUrlUtils.getUrl(photoUrl)).into(imageView);
                     viewHolder.PraiseImages.addView(imageView);
                 }
             }
@@ -204,7 +205,7 @@ public class TrendsAdapter extends BaseAdapter {
         if (commentListEntities != null && commentListEntities.size() > 0) {
             viewHolder.CommentsLayout.removeAllViews();
             for (int i = 0; i < commentListEntities.size(); i++) {
-                TextView textView = getCommentTextView(commentListEntities, i);
+                TextView textView = getCommentTextView(commentListEntities, i,context);
                 textView.setTag("CommentListEntity:" + position + ":" + i);
                 textView.setOnClickListener(onClickListener);
                 viewHolder.CommentsLayout.addView(textView);
@@ -215,8 +216,8 @@ public class TrendsAdapter extends BaseAdapter {
         return convertView;
     }
 
-    @NonNull
-    private TextView getCommentTextView(List<CommentListEntity> commentListEntities, int i) {
+
+    public static TextView getCommentTextView(List<CommentListEntity> commentListEntities, int i,Context context) {
         TextView textView = new TextView(context);
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
@@ -255,24 +256,7 @@ public class TrendsAdapter extends BaseAdapter {
         return textView;
     }
 
-    /**
-     * 获取正确的网址
-     *
-     * @param genPhoto
-     * @return
-     */
-    private String getUrl(String genPhoto) {
-        String url;
-        if (genPhoto.trim().length() > 0 && genPhoto != null) {
-            if (genPhoto.startsWith("Picture")) {
-                url = Configs.IMAGEHEAD + genPhoto;
-            } else {
-                url = genPhoto;
-            }
-        } else
-            url = null;
-        return url;
-    }
+
 
     class ViewHolder {
         //小图标

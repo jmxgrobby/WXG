@@ -7,10 +7,12 @@ package com.chsj.smallhabit.bean;
  * Date:  2015/11/3.
  */
 
+import java.io.Serializable;
+
 /**
  * 评论者信息
  */
-public class ReplySenderEntity {
+public class ReplySenderEntity implements Serializable{
 
     /**
      * UserId : 2&3925043885
