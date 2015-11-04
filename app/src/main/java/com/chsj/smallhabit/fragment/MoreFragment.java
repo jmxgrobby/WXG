@@ -22,6 +22,7 @@ import com.chsj.smallhabit.R;
 import com.chsj.smallhabit.utils.Configs;
 import com.chsj.smallhabit.utils.EventUtils;
 import com.chsj.smallhabit.utils.IsNetworkAvailable;
+import com.chsj.smallhabit.utils.MoreSettingsActivity;
 
 
 /**
@@ -64,6 +65,8 @@ public class MoreFragment extends Fragment implements  View.OnClickListener{
         switch(code){
             case R.id.txt_setup:
                 //设置
+                Intent intent=new Intent(getActivity(), MoreSettingsActivity.class);
+                startActivity(intent);
                 break;
             case R.id.fragement_more_share:
                 //分享

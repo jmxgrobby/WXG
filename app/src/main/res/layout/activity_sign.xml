@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!-- 登陆 注册 界面-->
+    <!--   textview.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG);//下划线-->
+  <ImageView
+      android:background="@mipmap/login_bg9"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/btn_sign_in"
+        android:textColor="#fff"
+        android:textSize="15sp"
+        android:background="#0069c9"
+        android:text="@string/main_sign_in"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="375dp"
+        android:layout_width="300dp"
+        android:layout_height="50dp" />
+    <Button
+        android:id="@+id/btn_sign_up"
+        android:layout_below="@id/btn_sign_in"
+        android:textColor="#0069c9"
+        android:textSize="15sp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="40dp"
+        android:text="@string/main_sign_up"
+        android:background="@drawable/main_sign_up"
+        android:layout_width="300dp"
+        android:layout_height="50dp" />
+    <TextView
+        android:id="@+id/btn_sign_forget"
+        android:textColor="#555"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="25dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/btn_sign_up"
+        android:text="@string/main_sign_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

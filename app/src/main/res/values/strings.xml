@@ -1,5 +1,20 @@
 <resources>
     <string name="app_name">Login</string>
+  <!-- 登陆 注册-->
+    <string name="main_sign_in">登录</string>
+    <string name="main_sign_up">注册</string>
+  <string name="main_sign_password">忘记密码</string>
+  <string name="main_sign_done">完成</string>
+  <string name="main_sign_patname">输入昵称</string>
+  <string name="main_sign_in_email">邮箱 如habit@gmail.com</string>
+  <string name="main_sign_pwd">输入5-12位密码</string>
+  <string name="main_sign_other">---------------或其他账号登录---------------</string>
+  <string name="main_sign_in_qq">QQ</string>
+ <string name="main_sign_in_wechat">微信</string>
+  <string name="main_sign_in_weibo">微博</string>
+
+
+
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -10,7 +25,29 @@
     <string name="main_tab_2">发现</string>
     <string name="main_tab_3">我的</string>
     <string name="main_tab_4">更多</string>
-
+    <!-- 更多 -->
+    <string name="more_tab_more">更多</string>
+    <string name="more_tab_setting">设置</string>
+    <string name="more_tab_share">分享好友</string>
+    <string name="more_tab_wechat">官方微信</string>
+    <string name="more_tab_weibo">官方微博</string>
+    <string name="more_tab_provider">公益提供</string>
+    <string name="more_tab_smallhabittitle">微习惯公益</string>
+    <string name="more_tab_smallhabitcontent">致力于为公益事业提供免费的内容宣传和推广</string>
+    <!-- 更多设置-->
+    <string  name="more_settings_title">设置</string>
+    <string name="more_settings_personal">个人资料</string>
+    <string name="more_settings_user">用户反馈</string>
+    <string name="more_settings_clean">清除缓存</string>
+    <string name="more_settings_help">帮助中心</string>
+    <string name="more_settings_tell">告诉伙伴们</string>
+    <string name="more_settings_check">检查更新</string>
+    <string name="more_settings_about">关于</string>
+    <string name="more_settings_habit">习惯介绍</string>
+    <string name="more_settings_voice">开启提示音</string>
+    <string name="more_settings_send">开启推送</string>
+    <string name="more_settings_settinghabit">开启习惯设置</string>
+    <string name="more_settings_lock">手势密码锁定</string>
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_discover_square">DiscoverSquareActivity</string>
