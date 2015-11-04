@@ -7,10 +7,12 @@ package com.chsj.smallhabit.bean;
  * Date:  2015/11/3.
  */
 
+import java.io.Serializable;
+
 /**
  * 这是动态的显示的大图片的网址
  */
-public class TrendsPhotosEntity {
+public class TrendsPhotosEntity implements Serializable{
 
     /**
      * Original : Picture.svc/GetReadImg/635820988399647084_1_2.jpg

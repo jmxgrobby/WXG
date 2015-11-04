@@ -7,10 +7,12 @@ package com.chsj.smallhabit.bean;
  * Date:  2015/11/3.
  */
 
+import java.io.Serializable;
+
 /**
  * 这是点赞的人的图片的数据
  */
-public class PraisePhotosEntity {
+public class PraisePhotosEntity implements Serializable{
 
     /**
      * UserId : 9885cbc16c076d9aa9388acce1bab738&1__7_0

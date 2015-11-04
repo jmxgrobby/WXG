@@ -80,7 +80,7 @@ public class MoreFragment extends Fragment implements  View.OnClickListener{
                                 SharedPreferences sp=getContext()
                                         .getSharedPreferences(Configs.SHARDPERFACE_NAME, Context.MODE_PRIVATE);
                                 SharedPreferences.Editor editor=sp.edit();
-                                editor.putBoolean(Configs.WECHATBACK,true);
+                                editor.putInt(Configs.WECHATBACK,3);
                                 editor.commit();
                                 Intent intent=new Intent();
                                 ComponentName cmp = new ComponentName("com.tencent.mm","com.tencent.mm.ui.LauncherUI");
