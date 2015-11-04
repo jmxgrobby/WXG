@@ -42,6 +42,7 @@ public class ParserTrends {
                         trendsEntity.setGenPhoto(jso.getString("GenPhoto"));
                         trendsEntity.setPraiseCount(jso.getInt("PraiseCount"));
                         trendsEntity.setCommentCount(jso.getInt("CommentCount"));
+                        trendsEntity.setUserMsg(jso.optString("UserMsg"));
                         JSONArray photos = jso.optJSONArray("Photos");
 
                         //解析Photos

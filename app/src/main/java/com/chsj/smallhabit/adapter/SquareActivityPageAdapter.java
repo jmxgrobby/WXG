@@ -13,6 +13,10 @@ import java.util.List;
  * Email: jmxgrobby@163.com
  * Date:  2015/11/3.
  */
+
+/**
+ * 发现广场的动态界面的ViewPager的适配器
+ */
 public class SquareActivityPageAdapter extends FragmentPagerAdapter {
     private List<BaseFragment> fragments;
 

@@ -17,4 +17,6 @@ public class Configs {
     public static final String ISFIRST = "isFirst?";
     //判断是否已经登录的信息
     public static final String ISLOADING = "isLoading?";
+    //动态页面请求图片的网址头部（如网址以Picture开头需添加）
+    public static final String IMAGEHEAD = "http://habit-file.appving.com/";
 }
