@@ -6,12 +6,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import com.chsj.smallhabit.R;
+import com.chsj.smallhabit.adapter.TrendsAdapter;
 import com.chsj.smallhabit.bean.TrendsEntity;
 import com.chsj.smallhabit.interfaceses.AfterGetTrends;
 import com.chsj.smallhabit.task.TrendsTask;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -29,12 +31,22 @@ public class HotSquareFragment extends BaseFragment implements AfterGetTrends {
     private View bg_layout;
     private PullToRefreshListView pullToRefreshListView;
 
+    public HotSquareFragment(){}
+
+    private List<TrendsEntity> list;
+    private TrendsAdapter adapter;
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         bg_layout = inflater.inflate(R.layout.fragment_hot_square, container, false);
 
         //pullToRefreshListView 的初始化及设置
         pullToRefreshListView = (PullToRefreshListView) bg_layout.findViewById(R.id.fragment_hot_square_pulltorefreshview);
         pullToRefreshListView.setMode(PullToRefreshBase.Mode.PULL_FROM_END);
+        list = new LinkedList<>();
+        adapter = new TrendsAdapter(list,getContext());
+
+        pullToRefreshListView.setAdapter(adapter);
+
         new TrendsTask(this).execute();
         return bg_layout;
     }
@@ -46,6 +58,9 @@ public class HotSquareFragment extends BaseFragment implements AfterGetTrends {
 
     @Override
     public void sendTrends(List<TrendsEntity> list) {
-        Log.d("debug111","回调");
+        if (list != null) {
+            this.list.addAll(list);
+            adapter.notifyDataSetChanged();
+        }
     }
 }
