@@ -55,11 +55,13 @@ public class TrendsTask extends AsyncTask<String,Void,String>{
             JSONObject jsonObject = new JSONObject() ;
             jsonObject.put("ReplyPageSize","3");
             jsonObject.put("SysMsgPageSize","20");
-            jsonObject.put("Channel","2");
+            //广场三个ViewPager，中，布局实际上是一样的，只是传的Channel不同
+            //0 最新  1 好友 2热门
+            jsonObject.put("Channel",params[0]);
             jsonObject.put("PraisePageSize","5");
-            jsonObject.put("LastId","");
+            jsonObject.put("LastId",params[1]);
             jsonObject.put("ApiKey","7c32efe3adba158b5a675da5ca288bfe");
-            jsonObject.put("UserId", "b0a001b2056ffb8434b873f16e52af8b&1__8_0") ;
+            jsonObject.put("UserId", "") ;
             jsonObject.put("_elapsed","0") ;
 
             StringEntity stringEntity = new StringEntity(jsonObject.toString()) ;
