@@ -19,4 +19,6 @@ public class Configs {
     public static final String ISLOADING = "isLoading?";
     //动态页面请求图片的网址头部（如网址以Picture开头需添加）
     public static final String IMAGEHEAD = "http://habit-file.appving.com/";
+   //判断点击官方微信是否按返回键
+    public static final String WECHATBACK="isweChatBack";
 }
