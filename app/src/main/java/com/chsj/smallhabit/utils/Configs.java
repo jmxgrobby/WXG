@@ -21,4 +21,10 @@ public class Configs {
     public static final String IMAGEHEAD = "http://habit-file.appving.com/";
    //判断点击官方微信是否按返回键
     public static final String WECHATBACK="isweChatBack";
+    // 广场请求数据的是热门
+    public static final String HOTTRENDS = "2";
+    // 广场请求数据的是好友
+    public static final String FRIENDTRENDS = "1";
+    // 广场请求数据的是最新
+    public static final String NEWTRENDS = "0";
 }

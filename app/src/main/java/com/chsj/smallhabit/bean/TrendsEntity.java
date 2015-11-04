@@ -42,9 +42,11 @@ public class TrendsEntity {
      */
 
 
+
     private String DetailId;
     private int Distance;
     private Object RemindFans;
+    //动态id用来做下一页的判断的
     private String GenId;
     //习惯名
     private String HabitName;

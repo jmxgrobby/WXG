@@ -29,7 +29,7 @@ public class ParserTrends {
             List<PraisePhotosEntity>  praisePhotosEntities;
             try {
                 JSONObject jsonObject = new JSONObject(jsonString);
-                JSONArray jsonArray = jsonObject.getJSONArray("Value");
+                JSONArray jsonArray = jsonObject.optJSONArray("Value");
                 if (jsonArray != null) {
                     for (int i = 0; i < jsonArray.length(); i++) {
                         //解析最外层属性
@@ -43,6 +43,7 @@ public class ParserTrends {
                         trendsEntity.setPraiseCount(jso.getInt("PraiseCount"));
                         trendsEntity.setCommentCount(jso.getInt("CommentCount"));
                         trendsEntity.setUserMsg(jso.optString("UserMsg"));
+                        trendsEntity.setGenId(jso.getString("GenId"));
                         JSONArray photos = jso.optJSONArray("Photos");
 
                         //解析Photos
