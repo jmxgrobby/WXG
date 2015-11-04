@@ -2,84 +2,113 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+
         >
+<RelativeLayout
+        android:id="@+id/discover_square_hot_listview_item_bg_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <ImageView
 
-    <ImageView
-            android:id="@+id/discover_square_hot_listview_item_phone"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@mipmap/ic_launcher"
-            />
+                android:id="@+id/discover_square_hot_listview_item_phone"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@mipmap/ic_launcher"
+                />
 
-    <TextView
-            android:layout_marginTop="5dp"
-            android:id="@+id/discover_square_hot_listview_item_nickname"
-            android:text="Susan"
-            android:gravity="center_vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_toRightOf="@id/discover_square_hot_listview_item_phone"
-            />
+        <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:focusable="true"
+                android:id="@+id/discover_square_hot_listview_item_nickname"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_toRightOf="@id/discover_square_hot_listview_item_phone"
+                />
 
-    <TextView
-            android:id="@+id/discover_square_hot_listview_item_time"
-            android:gravity="right|center_vertical"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="5dp"
-            android:drawableLeft="@mipmap/time_ico"
-            android:text="18小时前"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            />
+        <TextView
+                android:id="@+id/discover_square_hot_listview_item_time"
+                android:gravity="right|center_vertical"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:drawableLeft="@mipmap/time_ico"
+                android:text="18小时前"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                />
 
-    <LinearLayout
-            android:layout_below="@id/discover_square_hot_listview_item_time"
-            android:id="@+id/discover_square_hot_listview_item_xg_layout"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            ></LinearLayout>
+        <LinearLayout
+                android:layout_below="@id/discover_square_hot_listview_item_time"
+                android:id="@+id/discover_square_hot_listview_item_xg_layout"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                ></LinearLayout>
 
-    <TextView
-            android:id="@+id/discover_square_hot_listview_item_comments"
-            android:layout_below="@id/discover_square_hot_listview_item_xg_layout"
-            android:text="5"
-            android:layout_alignParentRight="true"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:layout_marginRight="5dp"
-            android:gravity="center"
-            />
+        <TextView
+                android:drawableLeft="@mipmap/reply_non"
+                android:id="@+id/discover_square_hot_listview_item_comments"
+                android:layout_below="@id/discover_square_hot_listview_item_xg_layout"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginRight="20dp"
+                android:gravity="center"
+                />
 
-    <TextView
-            android:layout_toLeftOf="@id/discover_square_hot_listview_item_comments"
-            android:id="@+id/discover_square_hot_listview_item_loves"
-            android:layout_below="@id/discover_square_hot_listview_item_xg_layout"
-            android:text="16"
-            android:gravity="center"
-            android:layout_alignParentRight="true"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:layout_marginRight="60dp"
-            />
+        <TextView
+                android:drawableLeft="@mipmap/praise_non"
+                android:layout_toLeftOf="@id/discover_square_hot_listview_item_comments"
+                android:id="@+id/discover_square_hot_listview_item_loves"
+                android:layout_below="@id/discover_square_hot_listview_item_xg_layout"
+                android:gravity="center"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginRight="100dp"
+                />
 
-    <LinearLayout
-            android:layout_below="@id/discover_square_hot_listview_item_comments"
-            android:id="@+id/discover_square_hot_listview_item_love_icons"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
-    </LinearLayout>
+        <LinearLayout
 
-    <RelativeLayout
-            android:layout_below="@id/discover_square_hot_listview_item_love_icons"
-            android:layout_width="match_parent"
-            android:background="@color/layout_bg"
-            android:layout_height="5dp"
-            ></RelativeLayout>
+                android:layout_below="@id/discover_square_hot_listview_item_comments"
+                android:id="@+id/discover_square_hot_listview_item_love_icons"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+        </LinearLayout>
 
+
+        <LinearLayout
+                android:visibility="gone"
+                android:layout_below="@id/discover_square_hot_listview_item_love_icons"
+                android:id="@+id/discover_square_hot_listview_item_zans_images"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+        </LinearLayout>
+
+        <LinearLayout
+                android:visibility="gone"
+                android:layout_below="@id/discover_square_hot_listview_item_zans_images"
+                android:id="@+id/discover_square_hot_listview_item_comments_layout"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+        </LinearLayout>
+
+        <RelativeLayout
+                android:layout_below="@id/discover_square_hot_listview_item_comments_layout"
+                android:layout_width="match_parent"
+                android:background="@color/layout_bg"
+                android:layout_height="5dp"
+                ></RelativeLayout>
+</RelativeLayout>
 </RelativeLayout>

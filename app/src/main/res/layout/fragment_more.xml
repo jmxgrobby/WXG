@@ -19,14 +19,14 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:textSize="20sp"
-                android:text="更多"
+                android:text="@string/more_tab_more"
                 android:textColor="#444"
-                android:layout_marginLeft="45dp"
+                android:layout_marginLeft="55dp"
                 />
             <TextView
                 android:id="@+id/txt_setup"
                 android:layout_marginRight="8dp"
-                android:text="设置"
+                android:text="@string/more_tab_setting"
                 android:textSize="20sp"
                 android:gravity="right"
                 android:textColor="#7ddeee"
@@ -50,7 +50,7 @@
                 android:gravity="center"
                 android:layout_weight="1"
                 android:textColor="#777"
-                android:text="分享好友"
+                android:text="@string/more_tab_share"
                 android:textSize="14sp"
                 android:button="@null"
                 android:paddingRight="20dp"
@@ -64,7 +64,7 @@
                 android:layout_weight="1"
                 android:textSize="14sp"
                 android:textColor="#777"
-                android:text="官方微信"
+                android:text="@string/more_tab_wechat"
                 android:button="@null"
                 android:drawableTop="@mipmap/login_wechat_login_icon"
                 android:layout_width="0dp"
@@ -76,7 +76,7 @@
                 android:layout_weight="1"
                 android:textSize="14sp"
                 android:textColor="#777"
-                android:text="官方微博"
+                android:text="@string/more_tab_weibo"
                 android:button="@null"
                 android:drawableTop="@mipmap/login_sina_login_icon"
                 android:layout_width="0dp"
@@ -90,7 +90,7 @@
         <TextView
             android:textColor="#888"
             android:layout_margin="10dp"
-            android:text="公益提供"
+            android:text="@string/more_tab_provider"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <RelativeLayout
@@ -108,7 +108,7 @@
                 android:id="@+id/fragment_more_title"
                 android:textSize="16sp"
                 android:textColor="#777"
-                android:text="微习惯公益"
+                android:text="@string/more_tab_smallhabittitle"
                 android:layout_toRightOf="@id/fragment_more_logo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -119,7 +119,7 @@
                 android:textSize="14sp"
                 android:layout_toRightOf="@id/fragment_more_logo"
                 android:layout_below="@id/fragment_more_title"
-                android:text="致力于为公益事业提供免费的内容宣传和推广"
+                android:text="@string/more_tab_smallhabitcontent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </RelativeLayout>
