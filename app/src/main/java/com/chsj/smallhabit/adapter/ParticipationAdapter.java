@@ -70,6 +70,7 @@ public class ParticipationAdapter extends BaseAdapter {
             convertView.setBackgroundResource(R.drawable.abc_list_longpressed);
         }else {
             // TODO: 2015/11/4 修改这里
+            // TODO: 2015/11/4 修改这里
 //            convertView.setBackgroundResource(R.drawable.);
         }
 
