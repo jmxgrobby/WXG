@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 import com.chsj.smallhabit.DiscoverSquareActivity;
+import com.chsj.smallhabit.DiscoveraAddFriendActivity;
 import com.chsj.smallhabit.R;
 import com.chsj.smallhabit.utils.Configs;
 import com.chsj.smallhabit.utils.EventUtils;
@@ -61,7 +62,8 @@ public class DiscoverFragment extends Fragment implements View.OnClickListener {
                 break;
             //加好友
             case R.id.fragment_discover_add_friend:
-                Toast.makeText(getContext(), "点击了加好友", Toast.LENGTH_SHORT).show();
+                intent = new Intent(getContext(), DiscoveraAddFriendActivity.class);
+                startActivity(intent);
                 break;
             //消息
             case R.id.fragment_discover_msg:

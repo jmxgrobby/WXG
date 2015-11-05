@@ -27,4 +27,5 @@ public class Configs {
     public static final String FRIENDTRENDS = "1";
     // 广场请求数据的是最新
     public static final String NEWTRENDS = "0";
+
 }
