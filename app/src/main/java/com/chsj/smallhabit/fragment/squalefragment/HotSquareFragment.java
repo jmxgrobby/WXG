@@ -1,12 +1,16 @@
 package com.chsj.smallhabit.fragment.squalefragment;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
+import com.chsj.smallhabit.EntryActivity;
 import com.chsj.smallhabit.R;
+import com.chsj.smallhabit.TrendsInfoAcitivity;
 import com.chsj.smallhabit.adapter.TrendsAdapter;
 import com.chsj.smallhabit.bean.TrendsEntity;
 import com.chsj.smallhabit.interfaceses.AfterGetTrends;
@@ -41,11 +45,13 @@ public class HotSquareFragment extends BaseFragment implements AfterGetTrends, V
     private List<TrendsEntity> list;
     private TrendsAdapter adapter;
 
+    private boolean isLoading;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         bg_layout = inflater.inflate(R.layout.fragment_square_item, container, false);
 
-
+        isLoading = getContext().getSharedPreferences(Configs.SHARDPERFACE_NAME, Context.MODE_PRIVATE)
+                .getBoolean(Configs.ISLOADING,false);
 
         //pullToRefreshListView 的初始化及设置
         pullToRefreshListView = (PullToRefreshListView) bg_layout.findViewById(R.id.fragment_hot_square_pulltorefreshview);
@@ -89,32 +95,47 @@ public class HotSquareFragment extends BaseFragment implements AfterGetTrends, V
         if (tag != null && tag instanceof String) {
             String s = (String) tag;
             String[] split = s.split(":");
+            Intent intent;
+            // TODO 跳转用户界面Activity
+            int location = Integer.parseInt(split[1]);
             if (split[0].equals("GenPhoto")) {
                 Toast.makeText(getContext(),
-                        "点击了" + list.get(Integer.parseInt(split[1])).getGenNickName(),
+                        "点击了" + list.get(location).getGenNickName(),
                         Toast.LENGTH_SHORT).show();
-            } else if(split[0].equals("HabitName")) {
+            } else if(split[0].equals("HabitName")) { // TODO 跳转习惯介绍界面Activity
                 Toast.makeText(getContext(),
-                        "点击了"+ list.get(Integer.parseInt(split[1])).getHabitName(),
+                        "点击了"+ list.get(location).getHabitName(),
                         Toast.LENGTH_SHORT).show();
-            }else if(split[0].equals("PraiseImages")){
+            }else if(split[0].equals("PraiseImages")){ // TODO 跳转赞我的人界面Activity
                 Toast.makeText(getContext(),
-                        "点击了"+ list.get(Integer.parseInt(split[1])).getGenNickName()+"点赞人图标",
+                        "点击了"+ list.get(location).getGenNickName()+"点赞人图标",
                         Toast.LENGTH_SHORT).show();
-            }else if(split[0].equals("CommentCount")){
-                Toast.makeText(getContext(),
-                        "点击了"+ list.get(Integer.parseInt(split[1])).getGenNickName()+"评论次数",
-                        Toast.LENGTH_SHORT).show();
-            }else if(split[0].equals("PraiseCount")){
-                Toast.makeText(getContext(),
-                        "点击了"+ list.get(Integer.parseInt(split[1])).getGenNickName()+"赞次数",
-                        Toast.LENGTH_SHORT).show();
-            }else if(split[0].equals("CommentListEntity")){
-                Toast.makeText(getContext(),
-                        "点击了"+ list.get(Integer.parseInt(split[1])).getGenNickName()+"评论详情",
-                        Toast.LENGTH_SHORT).show();
-            } else{
-                Toast.makeText(getContext(), "不知名的点击", Toast.LENGTH_SHORT).show();
+            }else if(split[0].equals("CommentCount")){ // TODO 跳转评论界面Activity或者登录界面
+                if(!isLoading){
+                    intent  = new Intent(getContext(), EntryActivity.class);
+                    startActivity(intent);
+                }else{
+
+                }
+            }else if(split[0].equals("PraiseCount")){ // TODO 跳转赞界面Activity或者登录界面
+                if(!isLoading){
+                    intent  = new Intent(getContext(), EntryActivity.class);
+                    startActivity(intent);
+                }else{
+
+                }
+            }else if(split[0].equals("CommentListEntity")){ // TODO 跳转评论详情界面Activity或者登录界面
+                if(!isLoading){
+                    intent  = new Intent(getContext(), EntryActivity.class);
+                    startActivity(intent);
+                }else{
+
+                }
+
+            } else{ // TODO 跳转详情界面Activity
+                intent = new Intent(getContext(), TrendsInfoAcitivity.class);
+                intent.putExtra("data",list.get(location));
+                startActivity(intent);
             }
         }
     }

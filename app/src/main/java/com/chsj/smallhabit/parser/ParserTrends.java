@@ -12,6 +12,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -24,9 +25,9 @@ public class ParserTrends {
         if (jsonString != null) {
             list = new LinkedList<>();
             TrendsEntity trendsEntity;
-            List<TrendsPhotosEntity> trendsPhotosEntities;
-            List<CommentListEntity> commentListEntities;
-            List<PraisePhotosEntity>  praisePhotosEntities;
+            ArrayList<TrendsPhotosEntity> trendsPhotosEntities;
+            ArrayList<CommentListEntity> commentListEntities;
+            ArrayList<PraisePhotosEntity>  praisePhotosEntities;
             try {
                 JSONObject jsonObject = new JSONObject(jsonString);
                 JSONArray jsonArray = jsonObject.optJSONArray("Value");
@@ -48,7 +49,7 @@ public class ParserTrends {
 
                         //解析Photos
                         if (photos != null&&photos.length()>0) {
-                            trendsPhotosEntities = new LinkedList<>();
+                            trendsPhotosEntities = new ArrayList<>();
                             TrendsPhotosEntity trendsPhotosEntity;
                             for (int j = 0; j < photos.length(); j++) {
                                 JSONObject jsonObject1 = photos.getJSONObject(j);
@@ -61,7 +62,7 @@ public class ParserTrends {
                         //解析评论列表
                         JSONArray commentList = jso.optJSONArray("CommentList");
                         if (commentList != null&&commentList.length()>0) {
-                            commentListEntities = new LinkedList<>();
+                            commentListEntities = new ArrayList<>();
                             CommentListEntity commentListEntity;
                             ReplySenderEntity replySenderEntity;
                             ReplySenderEntity replyReceiver;
@@ -99,7 +100,7 @@ public class ParserTrends {
                         //解析点赞人的图标
                         JSONArray praisePhotos = jso.optJSONArray("PraisePhotos");
                         if (praisePhotos != null && praisePhotos.length()>0) {
-                            praisePhotosEntities = new LinkedList<>();
+                            praisePhotosEntities = new ArrayList<>();
                             PraisePhotosEntity praisePhotosEntity;
                             for (int i1 = 0; i1 < praisePhotos.length(); i1++) {
                                 JSONObject jsonObject1 = praisePhotos.getJSONObject(i1);

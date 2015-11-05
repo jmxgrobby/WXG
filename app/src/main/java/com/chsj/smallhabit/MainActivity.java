@@ -71,12 +71,8 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
             }
             //默认显示第一tab页，
             SharedPreferences sp=getSharedPreferences(Configs.SHARDPERFACE_NAME,MODE_PRIVATE);
-            boolean flags=sp.getBoolean(Configs.WECHATBACK,true);
-            if (flags==true){
-                transaction.show(fragments[2]);
-            }else{
-                transaction.show(fragments[0]);
-            }
+            int flags=sp.getInt(Configs.WECHATBACK, 0);
+            transaction.show(fragments[flags]);
             transaction.commit();
             Log.d("debug111", "saveInstanceState空");
         }else{
@@ -96,6 +92,9 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             long currentClick = System.currentTimeMillis();
             if (currentClick - lastClick < 3000) {
+                getSharedPreferences(Configs.SHARDPERFACE_NAME,MODE_PRIVATE)
+                        .edit().putInt(Configs.WECHATBACK,0).commit();
+                Log.d("debug111","commit"+0);
                 finish();
             } else {
                 lastClick = currentClick;

@@ -1,0 +1,168 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context="com.chsj.smallhabit.TrendsInfoAcitivity"
+        >
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            >
+
+        <ImageView
+                android:id="@+id/activity_trends_info_back"
+                android:src="@mipmap/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+        <TextView
+                android:text="详情"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+    </RelativeLayout>
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            >
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+            <ImageView
+
+                    android:id="@+id/trends_info_phone"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@mipmap/ic_launcher"
+                    />
+
+            <TextView
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:focusable="true"
+                    android:id="@+id/trends_info_nickname"
+                    android:gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_toRightOf="@id/trends_info_phone"
+                    />
+
+            <TextView
+                    android:id="@+id/trends_info_time"
+                    android:gravity="right|center_vertical"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp"
+                    android:drawableLeft="@mipmap/time_ico"
+                    android:text="18小时前"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    />
+
+            <LinearLayout
+                    android:layout_below="@id/trends_info_time"
+                    android:id="@+id/trends_info_xg_layout"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    ></LinearLayout>
+
+            <TextView
+                    android:drawableLeft="@mipmap/reply_non"
+                    android:id="@+id/trends_info_comments"
+                    android:layout_below="@id/trends_info_xg_layout"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center"
+                    />
+
+            <TextView
+                    android:drawableLeft="@mipmap/praise_non"
+                    android:layout_toLeftOf="@id/trends_info_comments"
+                    android:id="@+id/trends_info_loves"
+                    android:layout_below="@id/trends_info_xg_layout"
+                    android:gravity="center"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="100dp"
+                    />
+
+            <LinearLayout
+
+                    android:layout_below="@id/trends_info_comments"
+                    android:id="@+id/trends_info_love_icons"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+            </LinearLayout>
+
+
+            <LinearLayout
+                    android:visibility="gone"
+                    android:layout_below="@id/trends_info_love_icons"
+                    android:id="@+id/trends_info_zans_images"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+            </LinearLayout>
+
+            <LinearLayout
+                    android:visibility="gone"
+                    android:layout_below="@id/trends_info_zans_images"
+                    android:id="@+id/trends_info_comments_layout"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+        <Button
+                android:text="发送"
+                android:background="#fff"
+                android:id="@+id/activity_trends_info_send"
+                android:layout_alignParentRight="true"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+        <EditText
+                android:id="@+id/activity_trends_info_say"
+                android:background="@drawable/trends_info_talk"
+                android:hint="说点什么吧。。。。"
+                android:layout_toLeftOf="@id/activity_trends_info_send"
+                android:gravity="left|center_vertical"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_centerVertical="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+    </RelativeLayout>
+
+
+</LinearLayout>
