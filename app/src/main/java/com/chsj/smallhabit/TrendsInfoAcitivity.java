@@ -76,6 +76,7 @@ public class TrendsInfoAcitivity extends Activity implements View.OnClickListene
         PraiseCount.setTag("PraiseCount");
         xg_layout = (LinearLayout) findViewById(R.id.trends_info_xg_layout);
         PraiseImages = (LinearLayout) findViewById(R.id.trends_info_zans_images);
+        PraiseImages.setTag("PraiseImages");
         CommentsLayout = (LinearLayout) findViewById(R.id.trends_info_comments_layout);
         bg_back = (ImageView) findViewById(R.id.activity_trends_info_back);
         bg_back.setTag("bg_back");
@@ -85,7 +86,7 @@ public class TrendsInfoAcitivity extends Activity implements View.OnClickListene
         talk.setTag("talk");
         initData();
 
-        EventUtils.setEvent(this, PraiseCount, CommentCount, GenPhoto,bg_back,send,talk);
+        EventUtils.setEvent(this, PraiseImages,PraiseCount, CommentCount, GenPhoto,bg_back,send,talk);
     }
 
     private void initData() {
@@ -189,6 +190,7 @@ public class TrendsInfoAcitivity extends Activity implements View.OnClickListene
             for (int i = 0; i < commentListEntities.size(); i++) {
                 TextView textView = TrendsAdapter.getCommentTextView(commentListEntities, i, this);
                 textView.setTag("CommentListEntity:" + i);
+                textView.setOnClickListener(this);
                 CommentsLayout.addView(textView);
             }
             CommentsLayout.setVisibility(View.VISIBLE);
@@ -206,12 +208,45 @@ public class TrendsInfoAcitivity extends Activity implements View.OnClickListene
                         "赞"+PraiseCount.getText().toString(),
                         Toast.LENGTH_SHORT).show();
                 break;
+            //评论次数
             case "CommentCount":
                 Toast.makeText(TrendsInfoAcitivity.this,
                         "评论"+CommentCount.getText().toString(),
                         Toast.LENGTH_SHORT).show();
                 break;
+            //作者图标
+            case "GenPhoto":
+                Toast.makeText(TrendsInfoAcitivity.this,
+                        "个人图标",
+                        Toast.LENGTH_SHORT).show();
+                break;
+            //返回按钮
+            case "bg_back":
+                finish();
+                break;
+            //发送按钮
+            case "send":
+                Toast.makeText(TrendsInfoAcitivity.this,
+                        "发送",
+                        Toast.LENGTH_SHORT).show();
+                break;
+            //编写评论
+            case "talk":
+                Toast.makeText(TrendsInfoAcitivity.this,
+                        "要发送的评论",
+                        Toast.LENGTH_SHORT).show();
+                break;
             case "":
+                Toast.makeText(TrendsInfoAcitivity.this,
+                        "点赞者图标",
+                        Toast.LENGTH_SHORT).show();
+                break;
+            default:
+                //评论具体详情
+                if(tag.startsWith("CommentListEntity")){
+                    String s = tag.split(":")[1];
+
+                }
                 break;
         }
     }
