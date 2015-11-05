@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.chsj.smallhabit"
-        >
-
+    package="com.chsj.smallhabit" >
     package="com.chsj.smallhabit" >
 
     <!-- share SDK -->
@@ -53,17 +51,16 @@
             android:name=".DiscoverSquareActivity"
             android:label="@string/title_activity_discover_square" >
         </activity>
-        <activity android:name=".utils.MoreSettingsActivity">
+        <activity android:name=".utils.MoreSettingsActivity" >
         </activity>
         <!-- 登录 -->
-        <activity android:name=".EntryActivity"/>
+        <activity android:name=".EntryActivity" />
         <!-- 注册 -->
-        <activity android:name=".RegisterActivity"/>
+        <activity android:name=".RegisterActivity" />
         <activity
-                android:windowSoftInputMode="adjustPan"
-                android:name=".TrendsInfoAcitivity"
-                android:label="@string/title_activity_trends_info_acitivity"
-                >
+            android:name=".TrendsInfoAcitivity"
+            android:label="@string/title_activity_trends_info_acitivity"
+            android:windowSoftInputMode="adjustPan" >
         </activity>
         <!-- sharedSDK -->
         <activity
@@ -101,6 +98,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".DiscoveraAddFriendActivity" >
+        </activity>
+        <activity android:name=".HabitsRecommendActivity" >
         </activity>
     </application>
 

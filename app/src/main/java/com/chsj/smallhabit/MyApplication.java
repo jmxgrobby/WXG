@@ -19,6 +19,8 @@ import org.json.JSONObject;
 public class MyApplication extends Application {
 
     private static RequestQueue requestQueue ;
+    public static final String UserId = "UserId" ;
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -51,6 +53,13 @@ public class MyApplication extends Application {
         requestQueue.add(jsObject) ;
 
     }
+
+
+    public static String getUserKey(){
+
+        return "b0a001b2056ffb8434b873f16e52af8b&1__8_0" ;
+    }
+
 
 
 }
