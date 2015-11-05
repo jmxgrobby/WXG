@@ -13,6 +13,9 @@
  <string name="main_sign_in_wechat">微信</string>
   <string name="main_sign_in_weibo">微博</string>
 
+  <!-- 加好友-->
+  <string name="discover_add_friend_title">加好友</string>
+  <string name="discover_add_friend_change">换一批</string>
 
 
 

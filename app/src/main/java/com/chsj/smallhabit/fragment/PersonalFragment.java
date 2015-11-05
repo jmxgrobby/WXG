@@ -1,20 +1,12 @@
 package com.chsj.smallhabit.fragment;
 
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
-import com.chsj.smallhabit.EntryActivity;
 import com.chsj.smallhabit.R;
-import com.chsj.smallhabit.RegisterActivity;
-import com.chsj.smallhabit.utils.Configs;
-import com.chsj.smallhabit.utils.EventUtils;
 
 
 /**
@@ -28,7 +20,7 @@ import com.chsj.smallhabit.utils.EventUtils;
 /**
  * 我的界面碎片，主页面第三tab页
  */
-public class PersonalFragment extends Fragment implements View.OnClickListener{
+public class PersonalFragment extends Fragment {
 
     private View bg_view;
     private boolean isLoding;
