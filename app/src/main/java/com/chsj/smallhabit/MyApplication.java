@@ -41,7 +41,9 @@ public class MyApplication extends Application {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError volleyError) {
-                        Log.d("TAG","volley请求出错："+volleyError.networkResponse.toString()) ;
+                        if (volleyError .networkResponse!= null) {
+                            Log.d("TAG","volley请求出错："+volleyError.networkResponse.toString()) ;
+                        }
                     }
                 }
         ) ;

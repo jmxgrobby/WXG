@@ -1,6 +1,7 @@
 package com.chsj.smallhabit;
 
 import android.app.Activity;
+import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -8,10 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
+import android.widget.*;
 import com.chsj.smallhabit.adapter.TrendsAdapter;
 import com.chsj.smallhabit.bean.CommentListEntity;
 import com.chsj.smallhabit.bean.PraisePhotosEntity;
@@ -30,6 +28,7 @@ import java.util.List;
  * Email: jmxgrobby@163.com
  * Date:  2015/11/4.
  */
+
 /**
  * 动态详情展示界面
  */
@@ -51,6 +50,15 @@ public class TrendsInfoAcitivity extends Activity implements View.OnClickListene
     //评论布局
     private LinearLayout CommentsLayout;
 
+    //返回按钮
+    private ImageView bg_back;
+
+    //写评论框
+    private EditText talk;
+
+    //发送按钮
+    private Button send;
+
     private TrendsEntity trendsEntity;
 
     @Override
@@ -58,18 +66,26 @@ public class TrendsInfoAcitivity extends Activity implements View.OnClickListene
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_trends_info_acitivity);
-         trendsEntity = (TrendsEntity) getIntent().getSerializableExtra("data");
-        Log.d("debug111",trendsEntity.getGenNickName());
+        trendsEntity = (TrendsEntity) getIntent().getSerializableExtra("data");
         CommentCount = (TextView) findViewById(R.id.trends_info_comments);
+        CommentCount.setTag("CommentCount");
         GenNickName = (TextView) findViewById(R.id.trends_info_nickname);
         GenPhoto = (ImageView) findViewById(R.id.trends_info_phone);
+        GenPhoto.setTag("GenPhoto");
         PraiseCount = (TextView) findViewById(R.id.trends_info_loves);
+        PraiseCount.setTag("PraiseCount");
         xg_layout = (LinearLayout) findViewById(R.id.trends_info_xg_layout);
         PraiseImages = (LinearLayout) findViewById(R.id.trends_info_zans_images);
         CommentsLayout = (LinearLayout) findViewById(R.id.trends_info_comments_layout);
+        bg_back = (ImageView) findViewById(R.id.activity_trends_info_back);
+        bg_back.setTag("bg_back");
+        send = (Button) findViewById(R.id.activity_trends_info_send);
+        send.setTag("send");
+        talk = (EditText) findViewById(R.id.activity_trends_info_say);
+        talk.setTag("talk");
         initData();
 
-        EventUtils.setEvent(this,CommentsLayout,PraiseImages,PraiseCount,CommentCount,GenPhoto);
+        EventUtils.setEvent(this, PraiseCount, CommentCount, GenPhoto,bg_back,send,talk);
     }
 
     private void initData() {
@@ -80,7 +96,7 @@ public class TrendsInfoAcitivity extends Activity implements View.OnClickListene
         }
         //昵称
         GenNickName.setText(trendsEntity.getGenNickName());
-        
+
         //习惯
         //习惯布局
         LinearLayout layout = (LinearLayout) LinearLayout.inflate(this, R.layout.test_xg_layout, null);
@@ -110,9 +126,7 @@ public class TrendsInfoAcitivity extends Activity implements View.OnClickListene
         Checks.setText(trendsEntity.getChecks() + "天");
         xg_layout.addView(layout);
 
-        
-        
-        
+
         //赞次数
         int praiseCount = trendsEntity.getPraiseCount();
         if (praiseCount != 0) {
@@ -166,15 +180,15 @@ public class TrendsInfoAcitivity extends Activity implements View.OnClickListene
             }
             PraiseImages.setVisibility(View.VISIBLE);
         }
-        
-        
+
+
         //评论
         List<CommentListEntity> commentListEntities = trendsEntity.getCommentListEntities();
         if (commentListEntities != null && commentListEntities.size() > 0) {
             CommentsLayout.removeAllViews();
             for (int i = 0; i < commentListEntities.size(); i++) {
-                TextView textView = TrendsAdapter.getCommentTextView(commentListEntities, i,this);
-                textView.setTag("CommentListEntity:"  + i);
+                TextView textView = TrendsAdapter.getCommentTextView(commentListEntities, i, this);
+                textView.setTag("CommentListEntity:" + i);
                 CommentsLayout.addView(textView);
             }
             CommentsLayout.setVisibility(View.VISIBLE);
@@ -184,6 +198,21 @@ public class TrendsInfoAcitivity extends Activity implements View.OnClickListene
 
     @Override
     public void onClick(View v) {
-
+        String tag = (String) v.getTag();
+        switch (tag){
+            //赞
+            case "PraiseCount":
+                Toast.makeText(TrendsInfoAcitivity.this,
+                        "赞"+PraiseCount.getText().toString(),
+                        Toast.LENGTH_SHORT).show();
+                break;
+            case "CommentCount":
+                Toast.makeText(TrendsInfoAcitivity.this,
+                        "评论"+CommentCount.getText().toString(),
+                        Toast.LENGTH_SHORT).show();
+                break;
+            case "":
+                break;
+        }
     }
 }

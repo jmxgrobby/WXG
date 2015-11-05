@@ -85,10 +85,8 @@ public class ParticipationFragment extends Fragment implements VolleyCallBack{
 
         datas = new ArrayList<>() ;
         adapter = new ParticipationAdapter(datas,getActivity()) ;
-        listView.setAdapter(adapter);
-
         listView.addHeaderView(headView);
-
+        listView.setAdapter(adapter);
         listView.setItemsCanFocus(true);
         return view;
     }

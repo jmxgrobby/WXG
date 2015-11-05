@@ -28,7 +28,7 @@ import com.chsj.smallhabit.utils.EventUtils;
 /**
  * 我的界面碎片，主页面第三tab页
  */
-public class PersonalFragment extends Fragment {
+public class PersonalFragment extends Fragment implements View.OnClickListener{
 
     private View bg_view;
     private boolean isLoding;
