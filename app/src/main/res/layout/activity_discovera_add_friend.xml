@@ -5,9 +5,14 @@
     android:orientation="vertical"
     tools:context="com.chsj.smallhabit.DiscoveraAddFriendActivity">
 <LinearLayout
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginBottom="5dp"
+    android:layout_marginRight="10dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <ImageView
+        android:id="@+id/add_friend_back"
         android:src="@mipmap/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
@@ -21,6 +26,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content" />
     <TextView
+        android:id="@+id/add_friend_changed"
         android:textColor="#79ceea"
         android:alpha="0.6"
         android:textSize="20sp"
@@ -29,20 +35,29 @@
         android:layout_height="wrap_content" />
 </LinearLayout>
     <LinearLayout
+        android:layout_margin="5dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="50dp">
 
 
     <FrameLayout
         android:background="#dde8f6"
         android:layout_width="match_parent"
-        android:layout_height="40dp">
+        android:layout_height="50dp">
         <SearchView
             android:layout_margin="5dp"
             android:background="#fff"
             android:queryHint="搜索好友昵称"
              android:layout_width="match_parent"
-            android:layout_height="30dp" />
+            android:layout_height="40dp" />
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="310dp"
+            android:src="@mipmap/share_icon_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left" />
     </FrameLayout>
 </LinearLayout>
     <ListView

@@ -1,6 +1,7 @@
 package com.chsj.smallhabit.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -11,7 +12,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.chsj.smallhabit.HabitsRecommendActivity;
 import com.chsj.smallhabit.MyApplication;
 import com.chsj.smallhabit.R;
 import com.chsj.smallhabit.adapter.ParticipationAdapter;
@@ -35,7 +38,7 @@ import java.util.List;
 /**
  *签到碎片，主界面第一tab页
  */
-public class ParticipationFragment extends Fragment implements VolleyCallBack{
+public class ParticipationFragment extends Fragment implements VolleyCallBack ,View.OnClickListener{
 
     //本页面要请求的网址
     public static final String URL_PERSONAL_HABIT =
@@ -70,7 +73,9 @@ public class ParticipationFragment extends Fragment implements VolleyCallBack{
 //        碎片头部控件
         TextView edit_tv = (TextView) view.findViewById(R.id.partcaption_edit);
         TextView all_tv = (TextView) view.findViewById(R.id.partcaption_all);
+
         TextView add_habit_tv = (TextView) view.findViewById(R.id.partcaption_add_habit);
+        add_habit_tv.setOnClickListener(this);
 //      listview
         ListView listView =
                 (ListView) view.findViewById(R.id.partcaption_list_view);
@@ -137,5 +142,16 @@ public class ParticipationFragment extends Fragment implements VolleyCallBack{
 
             }
         }).start();
+    }
+
+    @Override
+    public void onClick(View v) {
+        Toast.makeText(getActivity(),"点击了碎片",Toast.LENGTH_SHORT).show();
+        switch (v.getId()) {
+            case R.id.partcaption_add_habit:
+                Intent intent = new Intent(getActivity(),HabitsRecommendActivity.class) ;
+                startActivity(intent);
+                break;
+        }
     }
 }
