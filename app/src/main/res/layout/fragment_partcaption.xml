@@ -44,6 +44,7 @@
             android:textColor="@color/text_bg"
             android:textSize="16sp"
             android:gravity="right"
+            android:onClick="addHabit"
             android:id="@+id/partcaption_add_habit"
             android:layout_width="0dp"
             android:layout_weight="1"
