@@ -1,4 +1,4 @@
-package com.chsj.smallhabit.utils;
+package com.chsj.smallhabit;
 
 import android.app.Activity;
 import android.os.Bundle;

@@ -16,7 +16,7 @@
   <!-- 加好友-->
   <string name="discover_add_friend_title">加好友</string>
   <string name="discover_add_friend_change">换一批</string>
-
+  <string name="dicover_add_friend_items_name">问心</string>
 
 
     <string name="hello_world">Hello world!</string>

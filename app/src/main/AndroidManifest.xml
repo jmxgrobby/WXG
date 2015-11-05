@@ -51,7 +51,7 @@
             android:name=".DiscoverSquareActivity"
             android:label="@string/title_activity_discover_square" >
         </activity>
-        <activity android:name=".utils.MoreSettingsActivity" >
+        <activity android:name=".MoreSettingsActivity" >
         </activity>
         <!-- 登录 -->
         <activity android:name=".EntryActivity" />

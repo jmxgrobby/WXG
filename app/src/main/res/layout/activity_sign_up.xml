@@ -178,6 +178,7 @@ android:layout_height="match_parent">
         android:layout_width="0dp"
         android:layout_height="wrap_content" />
     <RadioButton
+        android:onClick="btn_weibo"
         android:id="@+id/main_sign_up_weibo"
         android:layout_gravity="center"
         android:gravity="center"
