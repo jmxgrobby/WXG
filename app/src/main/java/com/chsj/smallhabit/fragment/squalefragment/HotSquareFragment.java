@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 import com.chsj.smallhabit.EntryActivity;
+import com.chsj.smallhabit.HabbitInfoActivity;
 import com.chsj.smallhabit.R;
 import com.chsj.smallhabit.TrendsInfoAcitivity;
 import com.chsj.smallhabit.adapter.TrendsAdapter;
@@ -103,9 +104,9 @@ public class HotSquareFragment extends BaseFragment implements AfterGetTrends, V
                         "点击了" + list.get(location).getGenNickName(),
                         Toast.LENGTH_SHORT).show();
             } else if(split[0].equals("HabitName")) { // TODO 跳转习惯介绍界面Activity
-                Toast.makeText(getContext(),
-                        "点击了"+ list.get(location).getHabitName(),
-                        Toast.LENGTH_SHORT).show();
+                intent = new Intent(getContext(), HabbitInfoActivity.class);
+                intent.putExtra("DetailId",list.get(location).getDetailId());
+                startActivity(intent);
             }else if(split[0].equals("PraiseImages")){ // TODO 跳转赞我的人界面Activity
                 Toast.makeText(getContext(),
                         "点击了"+ list.get(location).getGenNickName()+"点赞人图标",

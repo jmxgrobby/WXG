@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView
+            android:text="·"
+            android:gravity="center_vertical"
+            android:layout_margin="10dp"
+            android:textColor="@color/text_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            />
+    <TextView
+            android:id="@+id/habbit_info_like_bookname"
+            android:layout_margin="10dp"
+            android:textColor="@color/text_bg"
+            android:text="很厉害的三个故事你敢看吗"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            />
+</LinearLayout>

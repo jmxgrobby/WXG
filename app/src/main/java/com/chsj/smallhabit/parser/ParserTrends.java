@@ -39,6 +39,7 @@ public class ParserTrends {
                         trendsEntity.setChecks(jso.getInt("Checks"));
                         trendsEntity.setCheckTime(jso.getInt("CheckTime"));
                         trendsEntity.setHabitName(jso.getString("HabitName"));
+                        trendsEntity.setDetailId(jso.getString("DetailId"));
                         trendsEntity.setGenNickName(jso.getString("GenNickName"));
                         trendsEntity.setGenPhoto(jso.getString("GenPhoto"));
                         trendsEntity.setPraiseCount(jso.getInt("PraiseCount"));
