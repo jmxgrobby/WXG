@@ -1,12 +1,20 @@
 package com.chsj.smallhabit.fragment;
 
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
+import com.chsj.smallhabit.EntryActivity;
 import com.chsj.smallhabit.R;
+import com.chsj.smallhabit.RegisterActivity;
+import com.chsj.smallhabit.utils.Configs;
+import com.chsj.smallhabit.utils.EventUtils;
 
 
 /**
@@ -20,7 +28,7 @@ import com.chsj.smallhabit.R;
 /**
  * 我的界面碎片，主页面第三tab页
  */
-public class PersonalFragment extends Fragment {
+public class PersonalFragment extends Fragment implements View.OnClickListener {
 
     private View bg_view;
     private boolean isLoding;
@@ -29,7 +37,7 @@ public class PersonalFragment extends Fragment {
         // Required empty public constructor
     }
     //登录按钮
-    private Button   login;
+    private Button login;
     //注册按钮
     private Button  regiest;
     //忘记密码
@@ -49,7 +57,7 @@ public class PersonalFragment extends Fragment {
             regiest = (Button) bg_view.findViewById(R.id.btn_sign_up);
             forgetPass = (TextView) bg_view.findViewById(R.id.btn_sign_forget);
 
-            EventUtils.setEvent(this,login,regiest,forgetPass);
+            EventUtils.setEvent(this, login, regiest, forgetPass);
         }
 
         return bg_view;
