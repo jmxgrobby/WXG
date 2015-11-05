@@ -61,7 +61,7 @@ public class TrendsTask extends AsyncTask<String,Void,String>{
             jsonObject.put("PraisePageSize","5");
             jsonObject.put("LastId",params[1]);
             jsonObject.put("ApiKey","7c32efe3adba158b5a675da5ca288bfe");
-            jsonObject.put("UserId", "") ;
+            jsonObject.put("UserId", params[2]) ;
             jsonObject.put("_elapsed","0") ;
 
             StringEntity stringEntity = new StringEntity(jsonObject.toString()) ;

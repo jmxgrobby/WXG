@@ -41,8 +41,9 @@
         <ImageView
             android:src="@mipmap/login_email_icon"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <TextView
+            android:layout_height="wrap_content"
+                android:layout_gravity="center"/>
+        <EditText
             android:alpha="0.6"
             android:textSize="18sp"
             android:id="@+id/main_sign_in_email"
@@ -50,7 +51,7 @@
             android:singleLine="true"
              android:layout_marginLeft="10dp"
             android:layout_gravity="center"
-            android:text="@string/main_sign_in_email"
+            android:hint="@string/main_sign_in_email"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content" />
@@ -73,8 +74,9 @@
         <ImageView
             android:src="@mipmap/login_pwd_icon"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <TextView
+            android:layout_height="wrap_content"
+                android:layout_gravity="center"/>
+        <EditText
             android:alpha="0.6"
             android:textSize="18sp"
             android:id="@+id/main_sign_in_pwd"
