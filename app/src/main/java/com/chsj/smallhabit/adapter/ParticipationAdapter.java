@@ -3,6 +3,7 @@ package com.chsj.smallhabit.adapter;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -66,26 +67,18 @@ public class ParticipationAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        if (pb.getDays().get(6) == 1){
-            convertView.setBackgroundResource(R.drawable.abc_list_longpressed);
-        }else {
-            // TODO: 2015/11/4 修改这里
-            // TODO: 2015/11/4 修改这里
-//            convertView.setBackgroundResource(R.drawable.);
-        }
-
-
         holder.textView.setText(pb.getName());
 
         List<Integer> days = pb.getDays();
 
         for (int i = 0; i < 7; i++) {
-
+            Drawable drawable = null ;
             if (i<=pb.getWeekPlanCompleted()-1){
-                holder.imageViews[i].setImageResource(R.drawable.circle_blue);
+                drawable = convertView.getResources().getDrawable(R.drawable.circle_blue);
             }else {
-                holder.imageViews[i].setImageResource(R.drawable.circle_white);
+                drawable = convertView.getResources().getDrawable(R.drawable.circle_white);
             }
+            holder.imageViews[i].setBackgroundDrawable(drawable);
         }
 
         return convertView;
