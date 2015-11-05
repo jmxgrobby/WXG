@@ -1,6 +1,7 @@
 package com.chsj.smallhabit;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import com.chsj.smallhabit.bean.CommentListEntity;
 import com.chsj.smallhabit.bean.PraisePhotosEntity;
 import com.chsj.smallhabit.bean.TrendsEntity;
 import com.chsj.smallhabit.bean.TrendsPhotosEntity;
+import com.chsj.smallhabit.utils.Configs;
 import com.chsj.smallhabit.utils.DimensionUtil;
 import com.chsj.smallhabit.utils.EventUtils;
 import com.chsj.smallhabit.utils.GetRightUrlUtils;
@@ -59,6 +61,9 @@ public class TrendsInfoAcitivity extends Activity implements View.OnClickListene
     //发送按钮
     private Button send;
 
+    //是否已经登陆
+    private boolean isLoading;
+
     private TrendsEntity trendsEntity;
 
     @Override
@@ -66,6 +71,9 @@ public class TrendsInfoAcitivity extends Activity implements View.OnClickListene
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_trends_info_acitivity);
+        isLoading = getSharedPreferences(Configs.SHARDPERFACE_NAME,MODE_PRIVATE)
+                .getBoolean(Configs.ISLOADING,false);
+
         trendsEntity = (TrendsEntity) getIntent().getSerializableExtra("data");
         CommentCount = (TextView) findViewById(R.id.trends_info_comments);
         CommentCount.setTag("CommentCount");
@@ -82,6 +90,7 @@ public class TrendsInfoAcitivity extends Activity implements View.OnClickListene
         bg_back.setTag("bg_back");
         send = (Button) findViewById(R.id.activity_trends_info_send);
         send.setTag("send");
+
         talk = (EditText) findViewById(R.id.activity_trends_info_say);
         talk.setTag("talk");
         initData();
@@ -201,18 +210,25 @@ public class TrendsInfoAcitivity extends Activity implements View.OnClickListene
     @Override
     public void onClick(View v) {
         String tag = (String) v.getTag();
+        Intent intent;
         switch (tag){
             //赞
             case "PraiseCount":
-                Toast.makeText(TrendsInfoAcitivity.this,
-                        "赞"+PraiseCount.getText().toString(),
-                        Toast.LENGTH_SHORT).show();
+                if(isLoading){
+
+                }else{
+                    intent = new Intent(this,EntryActivity.class);
+                    startActivity(intent);
+                }
                 break;
             //评论次数
             case "CommentCount":
-                Toast.makeText(TrendsInfoAcitivity.this,
-                        "评论"+CommentCount.getText().toString(),
-                        Toast.LENGTH_SHORT).show();
+                if(isLoading){
+
+                }else{
+                    intent = new Intent(this,EntryActivity.class);
+                    startActivity(intent);
+                }
                 break;
             //作者图标
             case "GenPhoto":
@@ -226,17 +242,23 @@ public class TrendsInfoAcitivity extends Activity implements View.OnClickListene
                 break;
             //发送按钮
             case "send":
-                Toast.makeText(TrendsInfoAcitivity.this,
-                        "发送",
-                        Toast.LENGTH_SHORT).show();
+                if(isLoading){
+
+                }else{
+                    intent = new Intent(this,EntryActivity.class);
+                    startActivity(intent);
+                }
                 break;
             //编写评论
             case "talk":
-                Toast.makeText(TrendsInfoAcitivity.this,
-                        "要发送的评论",
-                        Toast.LENGTH_SHORT).show();
+                if(isLoading){
+
+                }else{
+                    intent = new Intent(this,EntryActivity.class);
+                    startActivity(intent);
+                }
                 break;
-            case "":
+            case "PraiseImages":
                 Toast.makeText(TrendsInfoAcitivity.this,
                         "点赞者图标",
                         Toast.LENGTH_SHORT).show();
@@ -245,7 +267,14 @@ public class TrendsInfoAcitivity extends Activity implements View.OnClickListene
                 //评论具体详情
                 if(tag.startsWith("CommentListEntity")){
                     String s = tag.split(":")[1];
-
+                    int position = Integer.parseInt(s);
+                    
+                    Toast.makeText(TrendsInfoAcitivity.this,
+                            trendsEntity.getCommentListEntities().
+                                    get(position).
+                                    getReplySenderEntity().
+                                    getNickName(),
+                            Toast.LENGTH_SHORT).show();
                 }
                 break;
         }
