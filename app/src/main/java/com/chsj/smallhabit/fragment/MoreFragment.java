@@ -81,11 +81,6 @@ public class MoreFragment extends Fragment implements  View.OnClickListener{
                         .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                             //点击确定登陆到微信界面
                             public void onClick(DialogInterface dialog, int which) {
-                                SharedPreferences sp=getContext()
-                                        .getSharedPreferences(Configs.SHARDPERFACE_NAME, Context.MODE_PRIVATE);
-                                SharedPreferences.Editor editor=sp.edit();
-                                editor.putInt(Configs.WECHATBACK,3);
-                                editor.commit();
                                 Intent intent=new Intent();
                                 ComponentName cmp = new ComponentName("com.tencent.mm","com.tencent.mm.ui.LauncherUI");
                                 intent.setAction(Intent.ACTION_MAIN);

@@ -9,9 +9,6 @@ package com.chsj.smallhabit.bean;
  */
 
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 /**
  * 加好友的实体类
  */

@@ -21,8 +21,6 @@ public class Configs {
     public static final String ISLOADING = "isLoading?";
     //动态页面请求图片的网址头部（如网址以Picture开头需添加）
     public static final String IMAGEHEAD = "http://habit-file.appving.com/";
-   //判断点击官方微信是否按返回键
-    public static final String WECHATBACK="isweChatBack";
     // 广场请求数据的是热门
     public static final String HOTTRENDS = "2";
     // 广场请求数据的是好友
@@ -31,5 +29,4 @@ public class Configs {
     public static final String NEWTRENDS = "0";
 
     public static final String USETID = "user_id";
-    public static final String ACTION_LOGINBROADCAST = "action_loginbroadcaset";
 }

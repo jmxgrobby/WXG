@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.*;
 import com.chsj.smallhabit.R;
 import com.chsj.smallhabit.bean.*;
+import com.chsj.smallhabit.utils.CircleView;
 import com.chsj.smallhabit.utils.Configs;
 import com.chsj.smallhabit.utils.DimensionUtil;
 import com.chsj.smallhabit.utils.GetRightUrlUtils;
@@ -162,7 +163,7 @@ public class TrendsAdapter extends BaseAdapter {
         if (praisePhotosEntities != null && praisePhotosEntities.size() > 0) {
             viewHolder.PraiseImages.removeAllViews();
             viewHolder.PraiseImages.setTag("PraiseImages:" + position);
-            ImageView imageView1 = new ImageView(context);
+            CircleView imageView1 = new CircleView(context);
             LinearLayout.LayoutParams params1 = new LinearLayout.LayoutParams(
                     DimensionUtil.dpTopx(context, 20),
                     DimensionUtil.dpTopx(context, 20)
@@ -179,7 +180,7 @@ public class TrendsAdapter extends BaseAdapter {
                 PraisePhotosEntity praisePhotosEntity = praisePhotosEntities.get(i);
                 String photoUrl = praisePhotosEntity.getPhoto();
                 if (photoUrl != null && photoUrl.trim().length() > 0) {
-                    ImageView imageView = new ImageView(context);
+                    CircleView imageView = new CircleView(context);
 
                     LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                             DimensionUtil.dpTopx(context, 20),

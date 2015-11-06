@@ -53,6 +53,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         more = (ImageView) findViewById(R.id.activity_main_tab_more);
 
 
+
         EventUtils.setEvent(this, qd, discover, personal, more);
 
         // 碎片的初始化
@@ -69,13 +70,9 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                         .hide(fragments[i]);
             }
             //默认显示第一tab页，
-            SharedPreferences sp = getSharedPreferences(Configs.SHARDPERFACE_NAME, MODE_PRIVATE);
-            int flags = sp.getInt(Configs.WECHATBACK, 0);
-            transaction.show(fragments[flags]);
+            transaction.show(fragments[0]);
             transaction.commit();
-            Log.d("debug111", "saveInstanceState空");
         } else {
-            Log.d("debug111", "saveInstanceState不为空");
             for (int i = 0; i < fragments.length; i++) {
                 fragments[i] = manager.findFragmentByTag("fragment" + i);
                 manager.beginTransaction().hide(fragments[i]).commit();
@@ -90,9 +87,6 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             long currentClick = System.currentTimeMillis();
             if (currentClick - lastClick < 3000) {
-                getSharedPreferences(Configs.SHARDPERFACE_NAME, MODE_PRIVATE)
-                        .edit().putInt(Configs.WECHATBACK, 0).commit();
-                Log.d("debug111", "commit" + 0);
                 finish();
             } else {
                 lastClick = currentClick;
@@ -101,6 +95,9 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         }
         return true;
     }
+
+
+
 
     //碎片选择事件
     @Override

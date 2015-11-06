@@ -66,11 +66,9 @@ public class PersonalFragment extends Fragment{
             fragmentTransaction.hide(fragmengs[i]);
         }
         if (MyApplication.ISLOADING()){
-            Log.d("debug111","登入成功");
             fragmentTransaction.show(fragmengs[1]);
         }else{
             fragmentTransaction.show(fragmengs[0]);
-            Log.d("debug111", "登入失败");
         }
     }
 

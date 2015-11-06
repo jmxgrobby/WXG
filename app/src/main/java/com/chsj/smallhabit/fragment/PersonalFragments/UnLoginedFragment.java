@@ -14,9 +14,14 @@ import com.chsj.smallhabit.EntryActivity;
 import com.chsj.smallhabit.R;
 import com.chsj.smallhabit.RegisterActivity;
 import com.chsj.smallhabit.utils.EventUtils;
-
 /**
- * A simple {@link Fragment} subclass.
+ * Created
+ * Author: jmxgrobby
+ * Email: jmxgrobby@163.com
+ * Date:  2015/11/4.
+ */
+/**
+ * 没有登陆的时候的碎片界面
  */
 public class UnLoginedFragment extends Fragment implements View.OnClickListener{
 

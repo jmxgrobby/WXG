@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -16,6 +17,9 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import com.chsj.smallhabit.utils.Configs;
 import com.chsj.smallhabit.utils.EventUtils;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class MoreSettingsActivity extends Activity implements View.OnClickListener {
 
@@ -74,6 +78,11 @@ public class MoreSettingsActivity extends Activity implements View.OnClickListen
                 break;
             //用户反馈
             case R.id.activity_more_settings_user_back:
+                long test = 1446762135250l;
+                Date date = new Date(test);
+                Log.d("debug1111"," "+
+                               new  SimpleDateFormat("dd:hh").format(date)
+                );
                 break;
             //清除缓存
             case R.id.activity_more_settings_clear:

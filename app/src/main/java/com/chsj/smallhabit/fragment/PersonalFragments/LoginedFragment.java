@@ -8,9 +8,14 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.chsj.smallhabit.R;
-
 /**
- * A simple {@link Fragment} subclass.
+ * Created
+ * Author: jmxgrobby
+ * Email: jmxgrobby@163.com
+ * Date:  2015/11/4.
+ */
+/**
+ * 登陆成功显示的界面
  */
 public class LoginedFragment extends Fragment {
 
