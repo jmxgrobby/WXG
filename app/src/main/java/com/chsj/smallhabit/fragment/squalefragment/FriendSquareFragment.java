@@ -9,10 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
-import com.chsj.smallhabit.EntryActivity;
-import com.chsj.smallhabit.HabbitInfoActivity;
-import com.chsj.smallhabit.R;
-import com.chsj.smallhabit.TrendsInfoAcitivity;
+import com.chsj.smallhabit.*;
 import com.chsj.smallhabit.adapter.TrendsAdapter;
 import com.chsj.smallhabit.bean.TrendsEntity;
 import com.chsj.smallhabit.interfaceses.AfterGetTrends;
@@ -48,13 +45,10 @@ public class FriendSquareFragment extends BaseFragment implements AfterGetTrends
     private List<TrendsEntity> list;
     private TrendsAdapter adapter;
 
-    private boolean isLoading;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         bg_layout = inflater.inflate(R.layout.fragment_square_item, container, false);
 
-        isLoading = getContext().getSharedPreferences(Configs.SHARDPERFACE_NAME, Context.MODE_PRIVATE)
-                .getBoolean(Configs.ISLOADING,false);
 
         //pullToRefreshListView 的初始化及设置
         pullToRefreshListView = (PullToRefreshListView) bg_layout.findViewById(R.id.fragment_hot_square_pulltorefreshview);
@@ -65,10 +59,7 @@ public class FriendSquareFragment extends BaseFragment implements AfterGetTrends
         pullToRefreshListView.setMode(PullToRefreshBase.Mode.PULL_FROM_END);
         pullToRefreshListView.setOnRefreshListener(this);
 
-        if(isLoading){
-            UserID = getContext().getSharedPreferences(Configs.SHARDPERFACE_NAME,Context.MODE_PRIVATE)
-                    .getString(Configs.USETID,null);
-        }
+        UserID = MyApplication.getUSERID();
 
         //异步任务请求获取UI数据
         new TrendsTask(this).execute(Configs.FRIENDTRENDS, lastId,UserID);
@@ -119,21 +110,21 @@ public class FriendSquareFragment extends BaseFragment implements AfterGetTrends
                         "点击了"+ list.get(location).getGenNickName()+"点赞人图标",
                         Toast.LENGTH_SHORT).show();
             }else if(split[0].equals("CommentCount")){ // TODO 跳转评论界面Activity或者登录界面
-                if(!isLoading){
+                if(!MyApplication.ISLOADING()){
                     intent  = new Intent(getContext(), EntryActivity.class);
                     startActivity(intent);
                 }else{
 
                 }
             }else if(split[0].equals("PraiseCount")){ // TODO 跳转赞界面Activity或者登录界面
-                if(!isLoading){
+                if(!MyApplication.ISLOADING()){
                     intent  = new Intent(getContext(), EntryActivity.class);
                     startActivity(intent);
                 }else{
 
                 }
             }else if(split[0].equals("CommentListEntity")){ // TODO 跳转评论详情界面Activity或者登录界面
-                if(!isLoading){
+                if(!MyApplication.ISLOADING()){
                     intent  = new Intent(getContext(), EntryActivity.class);
                     startActivity(intent);
                 }else{

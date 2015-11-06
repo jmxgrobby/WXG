@@ -61,8 +61,8 @@ public class TrendsInfoAcitivity extends Activity implements View.OnClickListene
     //发送按钮
     private Button send;
 
-    //是否已经登陆
-    private boolean isLoading;
+
+
 
     private TrendsEntity trendsEntity;
 
@@ -71,8 +71,7 @@ public class TrendsInfoAcitivity extends Activity implements View.OnClickListene
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_trends_info_acitivity);
-        isLoading = getSharedPreferences(Configs.SHARDPERFACE_NAME,MODE_PRIVATE)
-                .getBoolean(Configs.ISLOADING,false);
+
 
         trendsEntity = (TrendsEntity) getIntent().getSerializableExtra("data");
         CommentCount = (TextView) findViewById(R.id.trends_info_comments);
@@ -214,7 +213,7 @@ public class TrendsInfoAcitivity extends Activity implements View.OnClickListene
         switch (tag){
             //赞
             case "PraiseCount":
-                if(isLoading){
+                if(MyApplication.ISLOADING()){
 
                 }else{
                     intent = new Intent(this,EntryActivity.class);
@@ -223,7 +222,7 @@ public class TrendsInfoAcitivity extends Activity implements View.OnClickListene
                 break;
             //评论次数
             case "CommentCount":
-                if(isLoading){
+                if(MyApplication.ISLOADING()){
 
                 }else{
                     intent = new Intent(this,EntryActivity.class);
@@ -242,7 +241,7 @@ public class TrendsInfoAcitivity extends Activity implements View.OnClickListene
                 break;
             //发送按钮
             case "send":
-                if(isLoading){
+                if(MyApplication.ISLOADING()){
 
                 }else{
                     intent = new Intent(this,EntryActivity.class);
@@ -251,7 +250,7 @@ public class TrendsInfoAcitivity extends Activity implements View.OnClickListene
                 break;
             //编写评论
             case "talk":
-                if(isLoading){
+                if(MyApplication.ISLOADING()){
 
                 }else{
                     intent = new Intent(this,EntryActivity.class);

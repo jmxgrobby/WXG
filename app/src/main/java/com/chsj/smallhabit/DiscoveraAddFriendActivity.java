@@ -17,7 +17,6 @@ import com.chsj.smallhabit.adapter.AddFriendAdapter;
 import com.chsj.smallhabit.bean.FriendEntity;
 import com.chsj.smallhabit.interfaceses.AddFriendCallBack;
 import com.chsj.smallhabit.interfaceses.VolleyCallBack;
-import com.chsj.smallhabit.utils.Configs;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -129,9 +128,7 @@ public class DiscoveraAddFriendActivity extends Activity
     @Override
     public void click(View v) {
        if(v!=null){
-           SharedPreferences sp=getSharedPreferences(Configs.SHARDPERFACE_NAME,MODE_PRIVATE);
-          boolean flags=sp.getBoolean(Configs.ISLOADING,true);
-           if(flags){
+           if(!MyApplication.ISLOADING()){
                Intent intent=new Intent(getApplicationContext(),EntryActivity.class);
                startActivity(intent);
            }else {
