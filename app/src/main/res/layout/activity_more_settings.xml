@@ -1,326 +1,534 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.chsj.smallhabit.MoreSettingsActivity">
-<LinearLayout
-    android:layout_marginTop="10dp"
-    android:orientation="horizontal"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <ImageView
-        android:layout_marginLeft="10dp"
-        android:src="@mipmap/back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <TextView
-        android:textSize="20sp"
-        android:gravity="center"
-        android:layout_gravity="center"
-        android:layout_weight="1"
-        android:layout_marginRight="30dp"
-        android:text="@string/more_settings_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-</LinearLayout>
-    <!-- 分割线-->
-    <ImageView
-        android:background="#f2f2f2"
-        android:layout_width="match_parent"
-        android:layout_height="1sp" />
-    <!-- 个人资料-->
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context="com.chsj.smallhabit.MoreSettingsActivity"
+        >
+
     <LinearLayout
-        android:layout_margin="10dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-   <ImageView
-       android:src="@mipmap/default_avatar_icon"
-       android:layout_width="35dp"
-       android:layout_height="35dp" />
-        <TextView
-            android:layout_weight="1"
-            android:layout_marginLeft="10dp"
-            android:layout_gravity="center"
-            android:text="@string/more_settings_personal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
         <ImageView
-            android:layout_gravity="center"
-            android:src="@mipmap/right_arrow_small_pre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+                android:id="@+id/activity_more_settings_back"
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+        <TextView
+                android:textSize="20sp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:layout_marginRight="30dp"
+                android:text="@string/more_settings_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
     </LinearLayout>
     <!-- 分割线-->
     <ImageView
-        android:background="#f2f2f2"
-        android:layout_width="match_parent"
-        android:layout_height="1sp" />
-    <!-- 用户反馈-->
-    <LinearLayout
-        android:layout_margin="10dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:src="@mipmap/set_feedback"
-            android:layout_width="35dp"
-            android:layout_height="35dp" />
-        <TextView
+            android:background="#f2f2f2"
+            android:layout_width="match_parent"
+            android:layout_height="1sp"
+            />
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
             android:layout_weight="1"
-            android:layout_marginLeft="10dp"
-            android:layout_gravity="center"
-            android:text="@string/more_settings_user"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <ImageView
-            android:layout_gravity="center"
-            android:src="@mipmap/right_arrow_small_pre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-    <!-- 分割线-->
-    <ImageView
-        android:background="#f2f2f2"
-        android:layout_width="match_parent"
-        android:layout_height="1sp" />
-    <!-- 清除缓存-->
-    <LinearLayout
-        android:layout_margin="10dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:src="@mipmap/set_clean_cache"
-            android:layout_width="35dp"
-            android:layout_height="35dp" />
-        <TextView
-            android:layout_weight="1"
-            android:layout_marginLeft="10dp"
-            android:layout_gravity="center"
-            android:text="@string/more_settings_clean"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <ImageView
-            android:layout_gravity="center"
-            android:src="@mipmap/right_arrow_small_pre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+            >
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+            <!-- 个人资料-->
+            <LinearLayout
+                    android:id="@+id/activity_more_settings_person_info"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                <ImageView
+                        android:src="@mipmap/default_avatar_icon"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        />
+
+                <TextView
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_gravity="center"
+                        android:text="@string/more_settings_personal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+
+                <ImageView
+                        android:layout_gravity="center"
+                        android:src="@mipmap/right_arrow_small_pre"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+            </LinearLayout>
+            <!-- 分割线-->
+            <ImageView
+                    android:background="#f2f2f2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1sp"
+                    />
+            <!-- 用户反馈-->
+            <LinearLayout
+                    android:id="@+id/activity_more_settings_user_back"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                <ImageView
+                        android:src="@mipmap/set_feedback"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        />
+
+                <TextView
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_gravity="center"
+                        android:text="@string/more_settings_user"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+
+                <ImageView
+                        android:layout_gravity="center"
+                        android:src="@mipmap/right_arrow_small_pre"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+            </LinearLayout>
+            <!-- 分割线-->
+            <ImageView
+                    android:background="#f2f2f2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1sp"
+                    />
+            <!-- 清除缓存-->
+            <LinearLayout
+                    android:id="@+id/activity_more_settings_clear"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                <ImageView
+                        android:src="@mipmap/set_clean_cache"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        />
+
+                <TextView
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_gravity="center"
+                        android:text="@string/more_settings_clean"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+
+                <ImageView
+                        android:layout_gravity="center"
+                        android:src="@mipmap/right_arrow_small_pre"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+            </LinearLayout>
 
 
-    <!-- 分割线-->
-    <ImageView
-        android:background="#f2f2f2"
-        android:layout_width="match_parent"
-        android:layout_height="1sp" />
-    <!-- 清除缓存-->
-    <LinearLayout
-        android:layout_margin="10dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:src="@mipmap/set_help_center"
-            android:layout_width="35dp"
-            android:layout_height="35dp" />
-        <TextView
-            android:layout_weight="1"
-            android:layout_marginLeft="10dp"
-            android:layout_gravity="center"
-            android:text="@string/more_settings_help"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <ImageView
-            android:layout_gravity="center"
-            android:src="@mipmap/right_arrow_small_pre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+            <!-- 分割线-->
+            <ImageView
+                    android:background="#f2f2f2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1sp"
+                    />
+            <!-- 帮助中心-->
+            <LinearLayout
+                    android:id="@+id/activity_more_settings_help"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                <ImageView
+                        android:src="@mipmap/set_help_center"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        />
+
+                <TextView
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_gravity="center"
+                        android:text="@string/more_settings_help"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+
+                <ImageView
+                        android:layout_gravity="center"
+                        android:src="@mipmap/right_arrow_small_pre"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+            </LinearLayout>
+
+
+            <!-- 分割线-->
+            <ImageView
+                    android:background="#f2f2f2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1sp"
+                    />
+            <!-- 告诉小朋友-->
+            <LinearLayout
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/activity_more_settings_tell_friend"
+                    >
+
+                <ImageView
+                        android:src="@mipmap/set_tell_partner"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        />
+
+                <TextView
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_gravity="center"
+                        android:text="@string/more_settings_tell"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+
+                <ImageView
+                        android:layout_gravity="center"
+                        android:src="@mipmap/right_arrow_small_pre"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+            </LinearLayout>
+
+            <!-- 分割线-->
+            <ImageView
+                    android:background="#f2f2f2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1sp"
+                    />
+            <!-- 检查更新-->
+            <LinearLayout
+                    android:id="@+id/activity_more_settings_check"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                <ImageView
+                        android:src="@mipmap/set_check_update"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        />
+
+                <TextView
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_gravity="center"
+                        android:text="@string/more_settings_check"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+
+                <ImageView
+                        android:layout_gravity="center"
+                        android:src="@mipmap/right_arrow_small_pre"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+            </LinearLayout>
+
+
+            <!-- 分割线-->
+            <ImageView
+                    android:background="#f2f2f2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1sp"
+                    />
+            <!-- 关于-->
+            <LinearLayout
+                    android:id="@+id/activity_more_settings_about"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                <ImageView
+                        android:src="@mipmap/set_about"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        />
+
+                <TextView
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_gravity="center"
+                        android:text="@string/more_settings_about"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+
+                <ImageView
+                        android:layout_gravity="center"
+                        android:src="@mipmap/right_arrow_small_pre"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+            </LinearLayout>
+
+
+            <!-- 分割线-->
+            <ImageView
+                    android:background="#f2f2f2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1sp"
+                    />
+            <!-- 习惯介绍-->
+            <LinearLayout
+                    android:id="@+id/activity_more_settings_habbit"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                <ImageView
+                        android:src="@mipmap/set_guide"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        />
+
+                <TextView
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_gravity="center"
+                        android:text="@string/more_settings_habit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+
+                <ImageView
+                        android:layout_gravity="center"
+                        android:src="@mipmap/right_arrow_small_pre"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+            </LinearLayout>
+
+            <!-- 分割线-->
+            <ImageView
+                    android:background="#f2f2f2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1sp"
+                    />
+            <!-- 开启提示音-->
+            <LinearLayout
+                    android:id="@+id/activity_more_settings_open_music"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                <ImageView
+                        android:src="@mipmap/set_sound"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        />
+
+                <TextView
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_gravity="center"
+                        android:text="开启提示音"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+
+                <ImageView
+                        android:layout_gravity="center"
+                        android:src="@mipmap/right_arrow_small_pre"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+            </LinearLayout>
+
+
+            <!-- 分割线-->
+            <ImageView
+                    android:background="#f2f2f2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1sp"
+                    />
+            <!-- 开启推送-->
+            <LinearLayout
+                    android:id="@+id/activity_more_settings_open_ts"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                <ImageView
+                        android:src="@mipmap/set_push"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        />
+
+                <TextView
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_gravity="center"
+                        android:text="开启推送"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+
+                <ImageView
+                        android:layout_gravity="center"
+                        android:src="@mipmap/right_arrow_small_pre"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+            </LinearLayout>
 
 
 
-    <!-- 分割线-->
-    <ImageView
-        android:background="#f2f2f2"
-        android:layout_width="match_parent"
-        android:layout_height="1sp" />
-    <!-- 清除缓存-->
-    <LinearLayout
-        android:layout_margin="10dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:src="@mipmap/set_tell_partner"
-            android:layout_width="35dp"
-            android:layout_height="35dp" />
-        <TextView
-            android:layout_weight="1"
-            android:layout_marginLeft="10dp"
-            android:layout_gravity="center"
-            android:text="@string/more_settings_tell"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <ImageView
-            android:layout_gravity="center"
-            android:src="@mipmap/right_arrow_small_pre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+            <!-- 分割线-->
+            <ImageView
+                    android:background="#f2f2f2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1sp"
+                    />
+            <!-- 开启习惯设置-->
+            <LinearLayout
+                    android:id="@+id/activity_more_settings_open_habbit"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
 
-    <!-- 分割线-->
-    <ImageView
-        android:background="#f2f2f2"
-        android:layout_width="match_parent"
-        android:layout_height="1sp" />
-    <!-- 清除缓存-->
-    <LinearLayout
-        android:layout_margin="10dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:src="@mipmap/set_check_update"
-            android:layout_width="35dp"
-            android:layout_height="35dp" />
-        <TextView
-            android:layout_weight="1"
-            android:layout_marginLeft="10dp"
-            android:layout_gravity="center"
-            android:text="@string/more_settings_check"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <ImageView
-            android:layout_gravity="center"
-            android:src="@mipmap/right_arrow_small_pre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+                <ImageView
+                        android:src="@mipmap/set_habit_pri"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        />
+
+                <TextView
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_gravity="center"
+                        android:text="开启习惯介绍"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+
+                <ImageView
+                        android:layout_gravity="center"
+                        android:src="@mipmap/right_arrow_small_pre"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+            </LinearLayout>
 
 
 
-    <!-- 分割线-->
-    <ImageView
-        android:background="#f2f2f2"
-        android:layout_width="match_parent"
-        android:layout_height="1sp" />
-    <!-- 清除缓存-->
-    <LinearLayout
-        android:layout_margin="10dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:src="@mipmap/set_about"
-            android:layout_width="35dp"
-            android:layout_height="35dp" />
-        <TextView
-            android:layout_weight="1"
-            android:layout_marginLeft="10dp"
-            android:layout_gravity="center"
-            android:text="@string/more_settings_about"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <ImageView
-            android:layout_gravity="center"
-            android:src="@mipmap/right_arrow_small_pre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+            <!-- 分割线-->
+            <ImageView
+                    android:background="#f2f2f2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1sp"
+                    />
+            <!-- 手势密码锁定-->
+            <LinearLayout
+                    android:id="@+id/activity_more_settings_hand_password"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
 
+                <ImageView
+                        android:src="@mipmap/set_gesture_pwd"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        />
 
+                <TextView
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_gravity="center"
+                        android:text="手势密码锁定"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
 
-    <!-- 分割线-->
-    <ImageView
-        android:background="#f2f2f2"
-        android:layout_width="match_parent"
-        android:layout_height="1sp" />
-    <!-- 清除缓存-->
-    <LinearLayout
-        android:layout_margin="10dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:src="@mipmap/set_guide"
-            android:layout_width="35dp"
-            android:layout_height="35dp" />
-        <TextView
-            android:layout_weight="1"
-            android:layout_marginLeft="10dp"
-            android:layout_gravity="center"
-            android:text="@string/more_settings_habit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <ImageView
-            android:layout_gravity="center"
-            android:src="@mipmap/right_arrow_small_pre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+                <ImageView
+                        android:layout_gravity="center"
+                        android:src="@mipmap/right_arrow_small_pre"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+            </LinearLayout>
+
+            <!-- 分割线-->
+            <ImageView
+                    android:background="#f2f2f2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1sp"
+                    />
+            <!-- 退出账号-->
+            <Button
+                    android:id="@+id/activity_more_settings_unlogin"
+                    android:background="@color/text_bg"
+                    android:gravity="center"
+                    android:layout_margin="10dp"
+                    android:textSize="20sp"
+                    android:text="退出账号"
+                    android:textColor="#fff"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+        </LinearLayout>
+    </ScrollView>
 
 
 
 
-    <!-- 分割线-->
-    <ImageView
-        android:background="#f2f2f2"
-        android:layout_width="match_parent"
-        android:layout_height="1sp" />
-    <!-- 清除缓存-->
-    <LinearLayout
-        android:layout_margin="10dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:src="@mipmap/set_sound"
-            android:layout_width="35dp"
-            android:layout_height="35dp" />
-        <TextView
-            android:layout_weight="1"
-            android:layout_marginLeft="10dp"
-            android:layout_gravity="center"
-            android:text="@string/more_settings_voice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <ImageView
-            android:layout_gravity="center"
-            android:src="@mipmap/right_arrow_small_pre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
 
-
-
-    <!-- 分割线-->
-    <ImageView
-        android:background="#f2f2f2"
-        android:layout_width="match_parent"
-        android:layout_height="1sp" />
-    <!-- 开启推送-->
-    <LinearLayout
-        android:layout_margin="10dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:src="@mipmap/set_push"
-            android:layout_width="35dp"
-            android:layout_height="35dp" />
-        <TextView
-            android:layout_weight="1"
-            android:layout_marginLeft="10dp"
-            android:layout_gravity="center"
-            android:text="@string/more_settings_send"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <ImageView
-            android:layout_gravity="center"
-            android:src="@mipmap/right_arrow_small_pre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
 </LinearLayout>

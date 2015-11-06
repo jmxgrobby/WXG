@@ -11,6 +11,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v4.content.LocalBroadcastManager;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -100,10 +101,12 @@ public class EntryActivity extends Activity implements View.OnClickListener, Vol
                     String string = value.getString("UserId");
                     SharedPreferences.Editor edit = getSharedPreferences(Configs.SHARDPERFACE_NAME, MODE_PRIVATE)
                             .edit();
-                    edit.putBoolean(Configs.ISLOADING,true);
+                    edit.putBoolean(Configs.ISLOADING, true);
                     edit.putString(Configs.USETID, string).commit();
-
+                    MyApplication.setISLOADING(true);
+                    MyApplication.setUSERID(string);
                     Toast.makeText(EntryActivity.this, "登录成功", Toast.LENGTH_LONG).show();
+                    finish();
                 }else{
                     String exceptionMsg = jsonObject.getString("ExceptionMsg");
                     if (exceptionMsg != null) {
