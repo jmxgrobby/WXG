@@ -7,7 +7,6 @@ package com.chsj.smallhabit;
  * Email: vhly@163.com
  */
 
-import com.google.gson.Gson;
 
 import org.json.JSONException;
 import org.json.JSONObject;

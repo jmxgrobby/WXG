@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.chsj.smallhabit" >
+          package="com.chsj.smallhabit"
+        >
+
     package="com.chsj.smallhabit" >
     package="com.chsj.smallhabit" >
 
@@ -103,6 +105,10 @@
         <activity
             android:name=".HabbitInfoActivity"
             android:label="@string/title_activity_habbit_info" >
+        </activity>
+        <activity
+            android:name=".UserFeedBackActivity"
+            android:label="@string/title_activity_user_feed_back" >
         </activity>
         <activity android:name=".HabitsRecommendActivity" />
         <activity android:name=".wxapi.HabitCategoryListActivity" >

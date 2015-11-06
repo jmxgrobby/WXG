@@ -7,6 +7,8 @@ package com.chsj.smallhabit.utils;
  * Date:  2015/11/3.
  */
 
+import android.content.IntentFilter;
+
 /**
  * 这是一个工具类，包含共享参数的信息：如共享参数名，存储字段的key值等
  */
@@ -29,4 +31,5 @@ public class Configs {
     public static final String NEWTRENDS = "0";
 
     public static final String USETID = "user_id";
+    public static final String ACTION_LOGINBROADCAST = "action_loginbroadcaset";
 }

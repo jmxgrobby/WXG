@@ -27,9 +27,13 @@ import org.json.JSONObject;
  * 注册Activity
  */
 public class RegisterActivity extends Activity implements View.OnClickListener, VolleyCallBack {
+    //提交
     private TextView ok;
+    //昵称
     private EditText nickName;
+    //邮箱
     private EditText email;
+    //密码
     private EditText passWord;
 
     private static  String DATAURL = "http://habit-api.appving.com/Service/MyAccount.svc/RegisterUser";
@@ -51,7 +55,6 @@ public class RegisterActivity extends Activity implements View.OnClickListener, 
         switch (v.getId()) {
             case R.id.main_sign_up_done:
                 JSONObject jsonObject = new JSONObject();
-
                 try {
                     jsonObject.put("ApiKey", "7c32efe3adba158b5a675da5ca288bfe");
                     jsonObject.put("UserId", "");

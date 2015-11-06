@@ -1,6 +1,7 @@
 package com.chsj.smallhabit;
 
 import android.app.Application;
+import android.content.SharedPreferences;
 import android.util.Log;
 
 import com.android.volley.Request;
@@ -11,6 +12,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.chsj.smallhabit.interfaceses.VolleyCallBack;
 
+import com.chsj.smallhabit.utils.Configs;
 import org.json.JSONObject;
 
 /**
@@ -20,11 +22,37 @@ public class MyApplication extends Application {
 
     private static RequestQueue requestQueue ;
     public static final String UserId = "UserId" ;
+    private static boolean ISLOADING ;
+    private static String USERID;
+
+    public static boolean ISLOADING() {
+        return ISLOADING;
+    }
+
+    public static void setISLOADING(boolean ISLOADING) {
+        MyApplication.ISLOADING = ISLOADING;
+    }
+
+    public static String getUSERID() {
+        return USERID;
+    }
+
+    public static void setUSERID(String USERID) {
+        MyApplication.USERID = USERID;
+    }
 
     @Override
     public void onCreate() {
         super.onCreate();
         requestQueue = Volley.newRequestQueue(this) ;
+        SharedPreferences sharedPreferences = getSharedPreferences(Configs.SHARDPERFACE_NAME, MODE_PRIVATE);
+        ISLOADING = sharedPreferences
+                .getBoolean(Configs.ISLOADING, false);
+        if(ISLOADING){
+            USERID = sharedPreferences.getString(Configs.USETID,"");
+        }else{
+            USERID ="";
+        }
     }
 
 
