@@ -22,7 +22,7 @@ import com.chsj.smallhabit.R;
 import com.chsj.smallhabit.utils.Configs;
 import com.chsj.smallhabit.utils.EventUtils;
 import com.chsj.smallhabit.utils.IsNetworkAvailable;
-import com.chsj.smallhabit.utils.MoreSettingsActivity;
+import com.chsj.smallhabit.MoreSettingsActivity;
 
 import cn.sharesdk.framework.ShareSDK;
 import cn.sharesdk.onekeyshare.OnekeyShare;

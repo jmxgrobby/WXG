@@ -28,4 +28,5 @@ public class Configs {
     // 广场请求数据的是最新
     public static final String NEWTRENDS = "0";
 
+    public static final String USETID = "user_id";
 }

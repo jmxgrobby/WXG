@@ -35,6 +35,8 @@ import java.util.List;
  */
 public class HotSquareFragment extends BaseFragment implements AfterGetTrends, View.OnClickListener ,PullToRefreshBase.OnRefreshListener {
 
+    private String UserID;
+
     private View bg_layout;
     private PullToRefreshListView pullToRefreshListView;
 
@@ -63,8 +65,13 @@ public class HotSquareFragment extends BaseFragment implements AfterGetTrends, V
         pullToRefreshListView.setMode(PullToRefreshBase.Mode.PULL_FROM_END);
         pullToRefreshListView.setOnRefreshListener(this);
 
+        if(isLoading){
+            UserID = getContext().getSharedPreferences(Configs.SHARDPERFACE_NAME,Context.MODE_PRIVATE)
+                    .getString(Configs.USETID,null);
+        }
+
         //异步任务请求获取UI数据
-        new TrendsTask(this).execute(Configs.HOTTRENDS,lastId);
+        new TrendsTask(this).execute(Configs.HOTTRENDS, lastId,UserID);
         return  bg_layout;
     }
 
@@ -77,7 +84,7 @@ public class HotSquareFragment extends BaseFragment implements AfterGetTrends, V
 
     @Override
     public void sendTrends(List<TrendsEntity> list) {
-        if (list != null) {
+        if (list != null&&list.size()>0) {
             this.list.addAll(list);
             lastId = list.get(list.size()-1).getGenId();
             adapter.notifyDataSetChanged();

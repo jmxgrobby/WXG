@@ -17,7 +17,7 @@ public class GetRightUrlUtils {
 
     public  static String getUrl(String genPhoto) {
         String url;
-        if (genPhoto.trim().length() > 0 && genPhoto != null) {
+        if (genPhoto != null&& genPhoto.trim().length() > 0 ) {
             if (genPhoto.startsWith("Picture")) {
                 url = Configs.IMAGEHEAD + genPhoto;
             } else {

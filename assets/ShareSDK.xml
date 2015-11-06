@@ -62,7 +62,7 @@
         AppKey="568898243"
         AppSecret="38a4f8204cc784f81f9f0daaf31e02e3"
         RedirectUrl="http://www.sharesdk.cn"
-        ShareByAppClient="false"
+        ShareByAppClient="true"
         Enable="true" />
 
     <TencentWeibo
@@ -79,7 +79,7 @@
         SortId="3"
         AppId="100371282"
         AppKey="aed9b0303e3ed1e27bae87c33761161d"
-        ShareByAppClient="false"
+        ShareByAppClient="true"
         Enable="true" />
     
     <!-- 
@@ -99,7 +99,7 @@
         SortId="4"
         AppId="wx4868b35061f87885"
         AppSecret="64020361b8ec4c99936c0e3999a9f249"
-        BypassApproval="false"
+        BypassApproval="true"
         Enable="true" />
     
     <WechatMoments
@@ -107,7 +107,7 @@
         SortId="5"
         AppId="wx4868b35061f87885"
         AppSecret="64020361b8ec4c99936c0e3999a9f249"
-        BypassApproval="false"
+        BypassApproval="true"
         Enable="true" />
         
 	<WechatFavorite
@@ -209,7 +209,7 @@
         HostType="sandbox"
     	ConsumerKey="sharesdk-7807"
 		ConsumerSecret="d05bf86993836004"
-		ShareByAppClient="false"
+		ShareByAppClient="true"
 		Enable="true" />
     
     <LinkedIn
@@ -336,7 +336,7 @@
     <Bluetooth
         Id="36"
         SortId="36"
-        Enable="false" />
+        Enable="true" />
 
     <Pocket
         Id="37"

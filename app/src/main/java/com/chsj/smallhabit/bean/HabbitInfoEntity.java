@@ -207,7 +207,10 @@ public class HabbitInfoEntity {
         try {
             JSONObject object = jsonObject.getJSONObject("Value");
             if (object != null) {
-                PicUrls = object.optJSONArray("PicUrls").getString(0);
+                JSONArray picUrls = object.optJSONArray("PicUrls");
+                if (picUrls != null) {
+                    PicUrls = picUrls.getString(0);
+                }
                 JoinCount = object.getInt("JoinCount");
                 Id = object.getString("Id");
                 Name = object.getString("Name");

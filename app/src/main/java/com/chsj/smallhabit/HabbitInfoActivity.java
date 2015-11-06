@@ -137,7 +137,7 @@ public class HabbitInfoActivity extends Activity implements VolleyCallBack {
                     }
                 }
             } else {
-                Log.d("debug111", "请求的list数据为空");
+               webView.setBackgroundColor(getResources().getColor(R.color.layout_bg));
             }
 
         }

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_margin="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<com.chsj.smallhabit.utils.CircleView
+    android:layout_margin="15dp"
+    android:id="@+id/add_friend_photo"
+    android:src="@mipmap/default_avatar_icon"
+    android:scaleType="centerInside"
+    android:layout_width="30dp"
+    android:layout_height="30dp" />
+    <TextView
+        android:alpha="0.8"
+        android:layout_marginTop="15dp"
+        android:id="@+id/add_friend_name"
+        android:layout_toRightOf="@id/add_friend_photo"
+        android:text="@string/dicover_add_friend_items_name"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        android:id="@+id/add_friend_guanzhu"
+        android:layout_alignParentRight="true"
+        android:src="@mipmap/guanzhu"
+        android:layout_width="50dp"
+        android:layout_height="40dp" />
+</RelativeLayout>

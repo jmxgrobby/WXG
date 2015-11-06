@@ -4,6 +4,7 @@
         >
 
     package="com.chsj.smallhabit" >
+    package="com.chsj.smallhabit" >
 
     <!-- share SDK -->
     <uses-permission android:name="android.permission.GET_TASKS" />
@@ -53,17 +54,16 @@
             android:name=".DiscoverSquareActivity"
             android:label="@string/title_activity_discover_square" >
         </activity>
-        <activity android:name=".utils.MoreSettingsActivity">
+        <activity android:name=".utils.MoreSettingsActivity" >
         </activity>
         <!-- 登录 -->
-        <activity android:name=".EntryActivity"/>
+        <activity android:name=".EntryActivity" />
         <!-- 注册 -->
-        <activity android:name=".RegisterActivity"/>
+        <activity android:name=".RegisterActivity" />
         <activity
-                android:windowSoftInputMode="adjustPan"
-                android:name=".TrendsInfoAcitivity"
-                android:label="@string/title_activity_trends_info_acitivity"
-                >
+            android:name=".TrendsInfoAcitivity"
+            android:label="@string/title_activity_trends_info_acitivity"
+            android:windowSoftInputMode="adjustPan" >
         </activity>
         <!-- sharedSDK -->
         <activity
@@ -105,8 +105,6 @@
         <activity
             android:name=".HabbitInfoActivity"
             android:label="@string/title_activity_habbit_info" >
-        </activity>
-        <activity android:name=".HabitsRecommendActivity" >
         </activity>
     </application>
 
