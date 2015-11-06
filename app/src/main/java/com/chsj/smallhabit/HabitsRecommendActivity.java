@@ -182,12 +182,13 @@ public class HabitsRecommendActivity extends FragmentActivity implements VolleyC
     public void onClick(View v) {
 
         Integer integer = (Integer) v.getTag();
-        Log.d("TAG","tag:"+integer) ;
         if (integer>=0) {
 
             HotRecommendHabit habit = pics.get(integer) ;
 
             Intent intent = new Intent(this,HabbitInfoActivity.class) ;
+
+            intent.putExtra("DetailId",habit.getId()) ;
 
             startActivity(intent);
 

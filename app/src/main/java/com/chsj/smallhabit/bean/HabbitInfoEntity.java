@@ -205,6 +205,7 @@ public class HabbitInfoEntity {
 
     public void parseJson(JSONObject jsonObject) {
         try {
+            Log.d("TAG",jsonObject.toString()) ;
             JSONObject object = jsonObject.getJSONObject("Value");
             if (object != null) {
                 JSONArray picUrls = object.optJSONArray("PicUrls");

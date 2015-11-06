@@ -4,12 +4,17 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.chsj.smallhabit.adapter.DimensionUtil;
 import com.chsj.smallhabit.bean.HabbitDesEntity;
 import com.chsj.smallhabit.bean.HabbitDessEntity;
 import com.chsj.smallhabit.bean.HabbitInfoEntity;
@@ -31,7 +36,7 @@ import java.util.List;
 /**
  * 习惯详情
  */
-public class HabbitInfoActivity extends Activity implements VolleyCallBack {
+public class HabbitInfoActivity extends Activity implements VolleyCallBack , View.OnClickListener{
 
     private static final String DATAURL = "http://habit-api.appving.com/Service/Home.svc/GetHabitCircumstance";
 
@@ -76,6 +81,14 @@ public class HabbitInfoActivity extends Activity implements VolleyCallBack {
         add = (Button) findViewById(R.id.habbit_info_add);
         auticeLayout = (LinearLayout) findViewById(R.id.habbit_info_Artice);
 
+        bg_back.setOnClickListener(this);
+        add.setOnClickListener(this);
+
+        int suitablePx = DimensionUtil.getSuitablePx(660, 310, getWindowManager());
+        ViewGroup.LayoutParams layoutParams = bigImage.getLayoutParams();
+        layoutParams.height = suitablePx ;
+
+
         loadData();
     }
 
@@ -85,14 +98,14 @@ public class HabbitInfoActivity extends Activity implements VolleyCallBack {
         JSONObject jsonObject = new JSONObject();
         try {
             jsonObject.put("ApiKey", "7c32efe3adba158b5a675da5ca288bfe");
-            jsonObject.put("UserId", "");
+            jsonObject.put("UserId", MyApplication.getUserKey());
             jsonObject.put("_elapsed", "0");
             jsonObject.put("CheckTime", "1446722573281");
             jsonObject.put("DetailId", detailId);
         } catch (Exception e) {
             e.printStackTrace();
         }
-
+        Log.d("TAG","json:"+jsonObject.toString()) ;
         MyApplication.doPost(DATAURL, jsonObject, this);
     }
 
@@ -140,6 +153,18 @@ public class HabbitInfoActivity extends Activity implements VolleyCallBack {
                webView.setBackgroundColor(getResources().getColor(R.color.layout_bg));
             }
 
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.habbit_info_back:
+                finish();
+                break;
+            case R.id.habbit_info_add:
+                Toast.makeText(this,"点击了加入",Toast.LENGTH_SHORT).show();
+                break;
         }
     }
 }
