@@ -84,11 +84,6 @@ public class HabbitInfoActivity extends Activity implements VolleyCallBack , Vie
         bg_back.setOnClickListener(this);
         add.setOnClickListener(this);
 
-        int suitablePx = DimensionUtil.getSuitablePx(660, 310, getWindowManager());
-        ViewGroup.LayoutParams layoutParams = bigImage.getLayoutParams();
-        layoutParams.height = suitablePx ;
-
-
         loadData();
     }
 
@@ -126,6 +121,9 @@ public class HabbitInfoActivity extends Activity implements VolleyCallBack , Vie
             String picUrls = habbitInfoEntity.getPicUrls();
             String url = GetRightUrlUtils.getUrl(picUrls);
             if (url != null) {
+                int suitablePx = DimensionUtil.getSuitablePx(660, 310, getWindowManager());
+                ViewGroup.LayoutParams layoutParams = bigImage.getLayoutParams();
+                layoutParams.height = suitablePx ;
                 Picasso.with(this).load(url).into(bigImage);
             }
             //相关文章 以及介绍
