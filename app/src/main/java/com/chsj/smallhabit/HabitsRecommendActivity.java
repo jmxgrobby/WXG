@@ -1,5 +1,6 @@
 package com.chsj.smallhabit;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -9,14 +10,17 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.AbsListView;
+import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.chsj.smallhabit.adapter.DimensionUtil;
 import com.chsj.smallhabit.adapter.PicPagerAdapter;
@@ -34,7 +38,7 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class HabitsRecommendActivity extends FragmentActivity implements VolleyCallBack {
+public class HabitsRecommendActivity extends FragmentActivity implements VolleyCallBack, View.OnClickListener {
 
     private final String URL_RECOMMEND_ALBUM =
             "http://habit-api.appving.com/Service/Home.svc/RecommendAlbum";
@@ -67,10 +71,9 @@ public class HabitsRecommendActivity extends FragmentActivity implements VolleyC
         @Override
         public void handleMessage(Message msg) {
             if (msg.what == 1) { //代表是广告的数据返回
-                // TODO: 2015/11/5 适配器更新
+
                 picAdapter.notifyDataSetChanged();
             } else if (msg.what == 2) {  //代表是列表的数据返回
-                // TODO: 2015/11/5 适配器更新
                 adapter.notifyDataSetChanged();
             }
             // TODO: 2015/11/5 取消等待动画
@@ -98,11 +101,21 @@ public class HabitsRecommendActivity extends FragmentActivity implements VolleyC
         pics = new ArrayList<>() ;
         // TODO: 2015/11/5 c初始化适配器
 
-        picAdapter = new PicPagerAdapter(pics,getWindowManager()) ;
-        recommendViewPager.setAdapter(picAdapter);
-
         adapter = new RecommendAdapter(datas,this) ;
         recommendListView.setAdapter(adapter);
+
+        picAdapter = new PicPagerAdapter(pics,getWindowManager(),this) ;
+        recommendViewPager.setAdapter(picAdapter);
+
+        recommendListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(HabitsRecommendActivity.this,
+                        "点击了"+position,
+                        Toast.LENGTH_SHORT
+                ).show();
+            }
+        });
     }
 
     @Override
@@ -164,4 +177,22 @@ public class HabitsRecommendActivity extends FragmentActivity implements VolleyC
 
     }
 
+    //轮播图片的监听事件
+    @Override
+    public void onClick(View v) {
+
+        Integer integer = (Integer) v.getTag();
+        if (integer>=0) {
+
+            HotRecommendHabit habit = pics.get(integer) ;
+
+            Intent intent = new Intent(this,HabbitInfoActivity.class) ;
+
+            intent.putExtra("DetailId",habit.getId()) ;
+
+            startActivity(intent);
+
+        }
+
+    }
 }

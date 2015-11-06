@@ -27,10 +27,12 @@ import java.util.List;
 public class PicPagerAdapter extends PagerAdapter {
 
     private List<HotRecommendHabit> picData;
-    WindowManager windowManager ;
-    public PicPagerAdapter(List<HotRecommendHabit> picData , WindowManager manager) {
+    private WindowManager windowManager ;
+    private View.OnClickListener clickListener ;
+    public PicPagerAdapter(List<HotRecommendHabit> picData , WindowManager manager , View.OnClickListener clickListener) {
         this.picData = picData;
         this.windowManager = manager ;
+        this.clickListener = clickListener ;
     }
 
     @Override
@@ -94,6 +96,10 @@ public class PicPagerAdapter extends PagerAdapter {
                         );
 
         ret.setLayoutParams(lp);
+
+        // TODO: 2015/11/6 给滚动图片设置点击的监听事件
+        ret.setTag(position);
+        ret.setOnClickListener(clickListener);
 
         container.addView(ret);
 
