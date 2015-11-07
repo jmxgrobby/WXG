@@ -58,7 +58,7 @@ public class RegisterActivity extends Activity implements View.OnClickListener, 
                 try {
                     jsonObject.put("ApiKey", "7c32efe3adba158b5a675da5ca288bfe");
                     jsonObject.put("UserId", "");
-                    jsonObject.put("DeviceNum","MI 2S_4.1.1_aries_Gude Version Name = 2.0.4_Gude Version Code = 20__channel = xiaomi");
+                    jsonObject.put("DeviceNum","MI   Version Name = 2.0.4_Gude Version Code = 20__channel = xiaomi");
                     jsonObject.put("NickName",nickName.getText().toString());
                     jsonObject.put("Gender","0");
                     jsonObject.put("Pwd",passWord.getText().toString());

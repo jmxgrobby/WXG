@@ -3,12 +3,14 @@ package com.chsj.smallhabit;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -57,6 +59,7 @@ public class MoreSettingsActivity extends Activity implements View.OnClickListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_more_settings);
         ButterKnife.bind(this);
 
@@ -67,6 +70,7 @@ public class MoreSettingsActivity extends Activity implements View.OnClickListen
 
     @Override
     public void onClick(View v) {
+        Intent intent;
         switch (v.getId()) {
             //返回
             case R.id.activity_more_settings_back:
@@ -78,11 +82,8 @@ public class MoreSettingsActivity extends Activity implements View.OnClickListen
                 break;
             //用户反馈
             case R.id.activity_more_settings_user_back:
-                long test = 1446762135250l;
-                Date date = new Date(test);
-                Log.d("debug1111"," "+
-                               new  SimpleDateFormat("dd:hh").format(date)
-                );
+                intent = new Intent(this,UserFeedBackActivity.class);
+                startActivity(intent);
                 break;
             //清除缓存
             case R.id.activity_more_settings_clear:
